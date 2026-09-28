@@ -1,0 +1,1048 @@
+{
+  "n": 2009,
+  "per_model": {
+    "xlm-roberta-base": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 50.055749128919864,
+          "tokens_per_word_mean": 2.0234869924906063,
+          "tokens_per_char_mean": 0.4799940076247254,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.0,
+          "tokens_per_char_median": 0.4782608695652174,
+          "unk_rate": 0.022642747757602274,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.02858932797677055
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 52.76256844201095,
+          "tokens_per_word_mean": 2.1295428572465993,
+          "tokens_per_char_mean": 0.5458434398436529,
+          "tokens_per_sent_median": 51.0,
+          "tokens_per_word_median": 2.1,
+          "tokens_per_char_median": 0.5434782608695652,
+          "unk_rate": 5.660377358490566e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.023660377358490567
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 52.579392732702836,
+          "tokens_per_word_mean": 2.1136871216802358,
+          "tokens_per_char_mean": 0.529250800680392,
+          "tokens_per_sent_median": 50.0,
+          "tokens_per_word_median": 2.0930232558139537,
+          "tokens_per_char_median": 0.5285714285714286,
+          "unk_rate": 5.680096940321115e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.03612541654044229
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 38.66052762568442,
+          "tokens_per_word_mean": 1.4497479370077722,
+          "tokens_per_char_mean": 0.3872225381769381,
+          "tokens_per_sent_median": 37.0,
+          "tokens_per_word_median": 1.4193548387096775,
+          "tokens_per_char_median": 0.3836734693877551,
+          "unk_rate": 6.437574836807478e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.008690726029690095
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 39.40318566450971,
+          "tokens_per_word_mean": 1.5991944220410144,
+          "tokens_per_char_mean": 0.3855392072122645,
+          "tokens_per_sent_median": 38.0,
+          "tokens_per_word_median": 1.5625,
+          "tokens_per_char_median": 0.38235294117647056,
+          "unk_rate": 0.0033349755561450714,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.013024090145399882
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 37.16774514683922,
+          "tokens_per_word_mean": 1.8754012666458615,
+          "tokens_per_char_mean": 0.34959460781438584,
+          "tokens_per_sent_median": 35.0,
+          "tokens_per_word_median": 1.8421052631578947,
+          "tokens_per_char_median": 0.3445378151260504,
+          "unk_rate": 8.035355564483728e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.01269586179188429
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 36.46341463414634,
+          "tokens_per_word_mean": 1.8394635152682393,
+          "tokens_per_char_mean": 0.3386909619319322,
+          "tokens_per_sent_median": 35.0,
+          "tokens_per_word_median": 1.8125,
+          "tokens_per_char_median": 0.3357664233576642,
+          "unk_rate": 8.190567196778377e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.004832434646099243
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 68.27227476356396,
+          "tokens_per_word_mean": 2.740925752575279,
+          "tokens_per_char_mean": 0.4454895690465733,
+          "tokens_per_sent_median": 65.0,
+          "tokens_per_word_median": 2.7142857142857144,
+          "tokens_per_char_median": 0.4444444444444444,
+          "unk_rate": 7.290808477752098e-06,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.009303071617611677
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 60.96963663514186,
+          "tokens_per_word_mean": 2.448213515314829,
+          "tokens_per_char_mean": 0.5512341726805408,
+          "tokens_per_sent_median": 58.0,
+          "tokens_per_word_median": 2.4285714285714284,
+          "tokens_per_char_median": 0.5487804878048781,
+          "unk_rate": 8.164065051270328e-06,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.017054731892103717
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 60.94574415131906,
+          "tokens_per_word_mean": 2.2747811235600564,
+          "tokens_per_char_mean": 0.5492258966844323,
+          "tokens_per_sent_median": 58.0,
+          "tokens_per_word_median": 2.259259259259259,
+          "tokens_per_char_median": 0.5476190476190477,
+          "unk_rate": 1.633453119895459e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.01814766416203855
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 50.055749128919864,
+          "mean_shahmukhi": 52.579392732702836,
+          "ratio_b_over_a": 1.0504166583799048,
+          "wilcoxon_p": 1.3513898156990702e-66,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 2.0234869924906063,
+          "mean_shahmukhi": 2.1136871216802358,
+          "ratio_b_over_a": 1.044576579698497,
+          "wilcoxon_p": 3.321442790180789e-58,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 0.4799940076247254,
+          "mean_shahmukhi": 0.529250800680392,
+          "ratio_b_over_a": 1.1026195999808754,
+          "wilcoxon_p": 2.1744683748563773e-192,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "google/muril-base-cased": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 38.187157789945246,
+          "tokens_per_word_mean": 1.5434037347223855,
+          "tokens_per_char_mean": 0.36721540925473234,
+          "tokens_per_sent_median": 36.0,
+          "tokens_per_word_median": 1.5,
+          "tokens_per_char_median": 0.36363636363636365,
+          "unk_rate": 0.0008342240412940901,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 44.13140866102538,
+          "tokens_per_word_mean": 1.7811849096542605,
+          "tokens_per_char_mean": 0.45754362690094286,
+          "tokens_per_sent_median": 43.0,
+          "tokens_per_word_median": 1.75,
+          "tokens_per_char_median": 0.45348837209302323,
+          "unk_rate": 3.383713061132416e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 49.29865604778497,
+          "tokens_per_word_mean": 1.9831876389105998,
+          "tokens_per_char_mean": 0.4968557788907659,
+          "tokens_per_sent_median": 47.0,
+          "tokens_per_word_median": 1.96,
+          "tokens_per_char_median": 0.49557522123893805,
+          "unk_rate": 3.029048575842328e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 35.84868093578895,
+          "tokens_per_word_mean": 1.3455759146188258,
+          "tokens_per_char_mean": 0.360096527512996,
+          "tokens_per_sent_median": 34.0,
+          "tokens_per_word_median": 1.3125,
+          "tokens_per_char_median": 0.35766423357664234,
+          "unk_rate": 8.33101916134407e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 33.21553011448482,
+          "tokens_per_word_mean": 1.3470757892921184,
+          "tokens_per_char_mean": 0.3258485538964622,
+          "tokens_per_sent_median": 32.0,
+          "tokens_per_word_median": 1.3076923076923077,
+          "tokens_per_char_median": 0.3217391304347826,
+          "unk_rate": 5.9943054098606324e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 63.73618715778994,
+          "tokens_per_word_mean": 3.179881031991525,
+          "tokens_per_char_mean": 0.594089180222774,
+          "tokens_per_sent_median": 61.0,
+          "tokens_per_word_median": 3.15,
+          "tokens_per_char_median": 0.5929203539823009,
+          "unk_rate": 0.13399090951689235,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 50.03334992533599,
+          "tokens_per_word_mean": 2.5117678647530584,
+          "tokens_per_char_mean": 0.4613477945441399,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.4761904761904763,
+          "tokens_per_char_median": 0.459915611814346,
+          "unk_rate": 0.041326342807684276,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 63.178198108511694,
+          "tokens_per_word_mean": 2.5386499257039645,
+          "tokens_per_char_mean": 0.4124701377681799,
+          "tokens_per_sent_median": 61.0,
+          "tokens_per_word_median": 2.5,
+          "tokens_per_char_median": 0.4107142857142857,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 61.74415131906421,
+          "tokens_per_word_mean": 2.4784479661247905,
+          "tokens_per_char_mean": 0.5581337765544283,
+          "tokens_per_sent_median": 59.0,
+          "tokens_per_word_median": 2.4482758620689653,
+          "tokens_per_char_median": 0.5567010309278351,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 66.22996515679442,
+          "tokens_per_word_mean": 2.470502342495552,
+          "tokens_per_char_mean": 0.5967975263602695,
+          "tokens_per_sent_median": 63.0,
+          "tokens_per_word_median": 2.4482758620689653,
+          "tokens_per_char_median": 0.5954198473282443,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 38.187157789945246,
+          "mean_shahmukhi": 49.29865604778497,
+          "ratio_b_over_a": 1.2909747386532495,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 1.5434037347223855,
+          "mean_shahmukhi": 1.9831876389105998,
+          "ratio_b_over_a": 1.2849441751981499,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 0.36721540925473234,
+          "mean_shahmukhi": 0.4968557788907659,
+          "ratio_b_over_a": 1.3530363006801378,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "xlm-roberta-large": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 50.055749128919864,
+          "tokens_per_word_mean": 2.0234869924906063,
+          "tokens_per_char_mean": 0.4799940076247254,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.0,
+          "tokens_per_char_median": 0.4782608695652174,
+          "unk_rate": 0.022642747757602274,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.02858932797677055
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 52.76256844201095,
+          "tokens_per_word_mean": 2.1295428572465993,
+          "tokens_per_char_mean": 0.5458434398436529,
+          "tokens_per_sent_median": 51.0,
+          "tokens_per_word_median": 2.1,
+          "tokens_per_char_median": 0.5434782608695652,
+          "unk_rate": 5.660377358490566e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.023660377358490567
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 52.579392732702836,
+          "tokens_per_word_mean": 2.1136871216802358,
+          "tokens_per_char_mean": 0.529250800680392,
+          "tokens_per_sent_median": 50.0,
+          "tokens_per_word_median": 2.0930232558139537,
+          "tokens_per_char_median": 0.5285714285714286,
+          "unk_rate": 5.680096940321115e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.03612541654044229
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 38.66052762568442,
+          "tokens_per_word_mean": 1.4497479370077722,
+          "tokens_per_char_mean": 0.3872225381769381,
+          "tokens_per_sent_median": 37.0,
+          "tokens_per_word_median": 1.4193548387096775,
+          "tokens_per_char_median": 0.3836734693877551,
+          "unk_rate": 6.437574836807478e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.008690726029690095
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 39.40318566450971,
+          "tokens_per_word_mean": 1.5991944220410144,
+          "tokens_per_char_mean": 0.3855392072122645,
+          "tokens_per_sent_median": 38.0,
+          "tokens_per_word_median": 1.5625,
+          "tokens_per_char_median": 0.38235294117647056,
+          "unk_rate": 0.0033349755561450714,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.013024090145399882
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 37.16774514683922,
+          "tokens_per_word_mean": 1.8754012666458615,
+          "tokens_per_char_mean": 0.34959460781438584,
+          "tokens_per_sent_median": 35.0,
+          "tokens_per_word_median": 1.8421052631578947,
+          "tokens_per_char_median": 0.3445378151260504,
+          "unk_rate": 8.035355564483728e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.01269586179188429
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 36.46341463414634,
+          "tokens_per_word_mean": 1.8394635152682393,
+          "tokens_per_char_mean": 0.3386909619319322,
+          "tokens_per_sent_median": 35.0,
+          "tokens_per_word_median": 1.8125,
+          "tokens_per_char_median": 0.3357664233576642,
+          "unk_rate": 8.190567196778377e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.004832434646099243
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 68.27227476356396,
+          "tokens_per_word_mean": 2.740925752575279,
+          "tokens_per_char_mean": 0.4454895690465733,
+          "tokens_per_sent_median": 65.0,
+          "tokens_per_word_median": 2.7142857142857144,
+          "tokens_per_char_median": 0.4444444444444444,
+          "unk_rate": 7.290808477752098e-06,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.009303071617611677
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 60.96963663514186,
+          "tokens_per_word_mean": 2.448213515314829,
+          "tokens_per_char_mean": 0.5512341726805408,
+          "tokens_per_sent_median": 58.0,
+          "tokens_per_word_median": 2.4285714285714284,
+          "tokens_per_char_median": 0.5487804878048781,
+          "unk_rate": 8.164065051270328e-06,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.017054731892103717
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 60.94574415131906,
+          "tokens_per_word_mean": 2.2747811235600564,
+          "tokens_per_char_mean": 0.5492258966844323,
+          "tokens_per_sent_median": 58.0,
+          "tokens_per_word_median": 2.259259259259259,
+          "tokens_per_char_median": 0.5476190476190477,
+          "unk_rate": 1.633453119895459e-05,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.01814766416203855
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 50.055749128919864,
+          "mean_shahmukhi": 52.579392732702836,
+          "ratio_b_over_a": 1.0504166583799048,
+          "wilcoxon_p": 1.3513898156990702e-66,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 2.0234869924906063,
+          "mean_shahmukhi": 2.1136871216802358,
+          "ratio_b_over_a": 1.044576579698497,
+          "wilcoxon_p": 3.321442790180789e-58,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 0.4799940076247254,
+          "mean_shahmukhi": 0.529250800680392,
+          "ratio_b_over_a": 1.1026195999808754,
+          "wilcoxon_p": 2.1744683748563773e-192,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "Qwen/Qwen2.5-1.5B": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 194.7884519661523,
+          "tokens_per_word_mean": 7.783361093643091,
+          "tokens_per_char_mean": 1.8498175642749577,
+          "tokens_per_sent_median": 186.0,
+          "tokens_per_word_median": 7.7368421052631575,
+          "tokens_per_char_median": 1.8571428571428572,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.9081644647739759
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 177.17073170731706,
+          "tokens_per_word_mean": 7.078968637338069,
+          "tokens_per_char_mean": 1.8151624387774634,
+          "tokens_per_sent_median": 168.0,
+          "tokens_per_word_median": 7.0,
+          "tokens_per_char_median": 1.8225806451612903,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.8990324103209566
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 87.55002488800399,
+          "tokens_per_word_mean": 3.5024737759246,
+          "tokens_per_char_mean": 0.8775753036234168,
+          "tokens_per_sent_median": 84.0,
+          "tokens_per_word_median": 3.473684210526316,
+          "tokens_per_char_median": 0.8773584905660378,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0031952151369053034
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 84.89397710303633,
+          "tokens_per_word_mean": 3.1566658838331465,
+          "tokens_per_char_mean": 0.8443450488388463,
+          "tokens_per_sent_median": 81.0,
+          "tokens_per_word_median": 3.1379310344827585,
+          "tokens_per_char_median": 0.8448275862068966,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.002022843472958394
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 118.79442508710801,
+          "tokens_per_word_mean": 4.768687988856071,
+          "tokens_per_char_mean": 1.147648047391872,
+          "tokens_per_sent_median": 115.0,
+          "tokens_per_word_median": 4.730769230769231,
+          "tokens_per_char_median": 1.1470588235294117,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.5147700894166548
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 62.6590343454455,
+          "tokens_per_word_mean": 3.1370061604674784,
+          "tokens_per_char_mean": 0.5836993546583591,
+          "tokens_per_sent_median": 60.0,
+          "tokens_per_word_median": 3.111111111111111,
+          "tokens_per_char_median": 0.5819672131147541,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.040005719642204604
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 49.892981582877056,
+          "tokens_per_word_mean": 2.5001032783588912,
+          "tokens_per_char_mean": 0.4588138720209933,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.473684210526316,
+          "tokens_per_char_median": 0.45544554455445546,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0015363894847109294
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 72.41114982578397,
+          "tokens_per_word_mean": 2.8994154098031246,
+          "tokens_per_char_mean": 0.4713555728275346,
+          "tokens_per_sent_median": 69.0,
+          "tokens_per_word_median": 2.8636363636363638,
+          "tokens_per_char_median": 0.46875,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 58.01095072175212,
+          "tokens_per_word_mean": 2.322220244155135,
+          "tokens_per_char_mean": 0.5226694972335209,
+          "tokens_per_sent_median": 55.0,
+          "tokens_per_word_median": 2.3,
+          "tokens_per_char_median": 0.5217391304347826,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 59.92882030861125,
+          "tokens_per_word_mean": 2.2302268698499637,
+          "tokens_per_char_mean": 0.53813705382697,
+          "tokens_per_sent_median": 57.0,
+          "tokens_per_word_median": 2.2142857142857144,
+          "tokens_per_char_median": 0.5363636363636364,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 2.4917564391139315e-05
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 194.7884519661523,
+          "mean_shahmukhi": 87.55002488800399,
+          "ratio_b_over_a": 0.4494620908184908,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 7.783361093643091,
+          "mean_shahmukhi": 3.5024737759246,
+          "ratio_b_over_a": 0.44999502577172956,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 1.8498175642749577,
+          "mean_shahmukhi": 0.8775753036234168,
+          "ratio_b_over_a": 0.47441181258725124,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "google/gemma-2-2b": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 85.92434046789448,
+          "tokens_per_word_mean": 3.4497004584695112,
+          "tokens_per_char_mean": 0.8194928124282966,
+          "tokens_per_sent_median": 82.0,
+          "tokens_per_word_median": 3.41025641025641,
+          "tokens_per_char_median": 0.8181818181818182,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 81.98307615729219,
+          "tokens_per_word_mean": 3.2927203458315977,
+          "tokens_per_char_mean": 0.8441793820625505,
+          "tokens_per_sent_median": 78.0,
+          "tokens_per_word_median": 3.259259259259259,
+          "tokens_per_char_median": 0.8421052631578947,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 61.85067197610751,
+          "tokens_per_word_mean": 2.4826631052128803,
+          "tokens_per_char_mean": 0.6215671632562914,
+          "tokens_per_sent_median": 59.0,
+          "tokens_per_word_median": 2.4545454545454546,
+          "tokens_per_char_median": 0.618421052631579,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 51.88053758088601,
+          "tokens_per_word_mean": 1.9414399639222375,
+          "tokens_per_char_mean": 0.5181314601098737,
+          "tokens_per_sent_median": 49.0,
+          "tokens_per_word_median": 1.9166666666666667,
+          "tokens_per_char_median": 0.5157894736842106,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 49.951219512195124,
+          "tokens_per_word_mean": 2.0250519220156,
+          "tokens_per_char_mean": 0.48667768054698535,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.0,
+          "tokens_per_char_median": 0.48148148148148145,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 47.08561473369836,
+          "tokens_per_word_mean": 2.365121418215839,
+          "tokens_per_char_mean": 0.44010495028755997,
+          "tokens_per_sent_median": 45.0,
+          "tokens_per_word_median": 2.3333333333333335,
+          "tokens_per_char_median": 0.4369747899159664,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 43.72025883524142,
+          "tokens_per_word_mean": 2.1963349858882775,
+          "tokens_per_char_mean": 0.40380479469715097,
+          "tokens_per_sent_median": 42.0,
+          "tokens_per_word_median": 2.1724137931034484,
+          "tokens_per_char_median": 0.4,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 65.36187157789945,
+          "tokens_per_word_mean": 2.623233313842237,
+          "tokens_per_char_mean": 0.4263209819501732,
+          "tokens_per_sent_median": 62.0,
+          "tokens_per_word_median": 2.6,
+          "tokens_per_char_median": 0.42338709677419356,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 55.812842210054754,
+          "tokens_per_word_mean": 2.2381274297267315,
+          "tokens_per_char_mean": 0.5039368806806365,
+          "tokens_per_sent_median": 53.0,
+          "tokens_per_word_median": 2.2142857142857144,
+          "tokens_per_char_median": 0.5,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 57.461921353907414,
+          "tokens_per_word_mean": 2.144193152431192,
+          "tokens_per_char_mean": 0.5174655207725743,
+          "tokens_per_sent_median": 55.0,
+          "tokens_per_word_median": 2.125,
+          "tokens_per_char_median": 0.5151515151515151,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 85.92434046789448,
+          "mean_shahmukhi": 61.85067197610751,
+          "ratio_b_over_a": 0.719827136749661,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 3.4497004584695112,
+          "mean_shahmukhi": 2.4826631052128803,
+          "ratio_b_over_a": 0.719674979060163,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 0.8194928124282966,
+          "mean_shahmukhi": 0.6215671632562914,
+          "ratio_b_over_a": 0.7584778704946564,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "Qwen/Qwen2.5-3B": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 194.7884519661523,
+          "tokens_per_word_mean": 7.783361093643091,
+          "tokens_per_char_mean": 1.8498175642749577,
+          "tokens_per_sent_median": 186.0,
+          "tokens_per_word_median": 7.7368421052631575,
+          "tokens_per_char_median": 1.8571428571428572,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.9081644647739759
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 177.17073170731706,
+          "tokens_per_word_mean": 7.078968637338069,
+          "tokens_per_char_mean": 1.8151624387774634,
+          "tokens_per_sent_median": 168.0,
+          "tokens_per_word_median": 7.0,
+          "tokens_per_char_median": 1.8225806451612903,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.8990324103209566
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 87.55002488800399,
+          "tokens_per_word_mean": 3.5024737759246,
+          "tokens_per_char_mean": 0.8775753036234168,
+          "tokens_per_sent_median": 84.0,
+          "tokens_per_word_median": 3.473684210526316,
+          "tokens_per_char_median": 0.8773584905660378,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0031952151369053034
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 84.89397710303633,
+          "tokens_per_word_mean": 3.1566658838331465,
+          "tokens_per_char_mean": 0.8443450488388463,
+          "tokens_per_sent_median": 81.0,
+          "tokens_per_word_median": 3.1379310344827585,
+          "tokens_per_char_median": 0.8448275862068966,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.002022843472958394
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 118.79442508710801,
+          "tokens_per_word_mean": 4.768687988856071,
+          "tokens_per_char_mean": 1.147648047391872,
+          "tokens_per_sent_median": 115.0,
+          "tokens_per_word_median": 4.730769230769231,
+          "tokens_per_char_median": 1.1470588235294117,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.5147700894166548
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 62.6590343454455,
+          "tokens_per_word_mean": 3.1370061604674784,
+          "tokens_per_char_mean": 0.5836993546583591,
+          "tokens_per_sent_median": 60.0,
+          "tokens_per_word_median": 3.111111111111111,
+          "tokens_per_char_median": 0.5819672131147541,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.040005719642204604
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 49.892981582877056,
+          "tokens_per_word_mean": 2.5001032783588912,
+          "tokens_per_char_mean": 0.4588138720209933,
+          "tokens_per_sent_median": 48.0,
+          "tokens_per_word_median": 2.473684210526316,
+          "tokens_per_char_median": 0.45544554455445546,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0015363894847109294
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 72.41114982578397,
+          "tokens_per_word_mean": 2.8994154098031246,
+          "tokens_per_char_mean": 0.4713555728275346,
+          "tokens_per_sent_median": 69.0,
+          "tokens_per_word_median": 2.8636363636363638,
+          "tokens_per_char_median": 0.46875,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 58.01095072175212,
+          "tokens_per_word_mean": 2.322220244155135,
+          "tokens_per_char_mean": 0.5226694972335209,
+          "tokens_per_sent_median": 55.0,
+          "tokens_per_word_median": 2.3,
+          "tokens_per_char_median": 0.5217391304347826,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 59.92882030861125,
+          "tokens_per_word_mean": 2.2302268698499637,
+          "tokens_per_char_mean": 0.53813705382697,
+          "tokens_per_sent_median": 57.0,
+          "tokens_per_word_median": 2.2142857142857144,
+          "tokens_per_char_median": 0.5363636363636364,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 2.4917564391139315e-05
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 194.7884519661523,
+          "mean_shahmukhi": 87.55002488800399,
+          "ratio_b_over_a": 0.4494620908184908,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 7.783361093643091,
+          "mean_shahmukhi": 3.5024737759246,
+          "ratio_b_over_a": 0.44999502577172956,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 1.8498175642749577,
+          "mean_shahmukhi": 0.8775753036234168,
+          "ratio_b_over_a": 0.47441181258725124,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        }
+      }
+    },
+    "CohereLabs/aya-expanse-8b": {
+      "per_condition": {
+        "pan_Guru": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 209.31408661025387,
+          "tokens_per_word_mean": 8.375069736896549,
+          "tokens_per_char_mean": 1.9894233353896291,
+          "tokens_per_sent_median": 199.0,
+          "tokens_per_word_median": 8.30188679245283,
+          "tokens_per_char_median": 1.9934640522875817,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.9746119016817594
+        },
+        "pan_Guru_devowel": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 191.69636635141862,
+          "tokens_per_word_mean": 7.670677280591528,
+          "tokens_per_char_mean": 1.9656936820789348,
+          "tokens_per_sent_median": 182.0,
+          "tokens_per_word_median": 7.6,
+          "tokens_per_char_median": 1.978494623655914,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.9722786262911627
+        },
+        "pan_Shah": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 88.81732205077152,
+          "tokens_per_word_mean": 3.5608841867267826,
+          "tokens_per_char_mean": 0.8932549701525547,
+          "tokens_per_sent_median": 85.0,
+          "tokens_per_word_median": 3.533333333333333,
+          "tokens_per_char_median": 0.8881118881118881,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.39725612831635226
+        },
+        "urd_Arab": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 82.74664011946241,
+          "tokens_per_word_mean": 3.0887251430881046,
+          "tokens_per_char_mean": 0.827036560935164,
+          "tokens_per_sent_median": 79.0,
+          "tokens_per_word_median": 3.0606060606060606,
+          "tokens_per_char_median": 0.824,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.40117782937715807
+        },
+        "hin_Deva": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 85.84370333499254,
+          "tokens_per_word_mean": 3.457003688620672,
+          "tokens_per_char_mean": 0.8295486207277237,
+          "tokens_per_sent_median": 82.0,
+          "tokens_per_word_median": 3.4210526315789473,
+          "tokens_per_char_median": 0.8305084745762712,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 2.3193784065870348e-05
+        },
+        "srp_Cyrl": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 53.762070681931306,
+          "tokens_per_word_mean": 2.6982087169263145,
+          "tokens_per_char_mean": 0.5028142909785885,
+          "tokens_per_sent_median": 51.0,
+          "tokens_per_word_median": 2.6666666666666665,
+          "tokens_per_char_median": 0.5,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.035515887712021334
+        },
+        "srp_Latn": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 46.70681931309109,
+          "tokens_per_word_mean": 2.342457216208679,
+          "tokens_per_char_mean": 0.4309283545926093,
+          "tokens_per_sent_median": 45.0,
+          "tokens_per_word_median": 2.3076923076923075,
+          "tokens_per_char_median": 0.42748091603053434,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 6.394270733422853e-05
+        },
+        "pan_Guru_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 69.07267297162768,
+          "tokens_per_word_mean": 2.7720576562536006,
+          "tokens_per_char_mean": 0.4507304755622338,
+          "tokens_per_sent_median": 66.0,
+          "tokens_per_word_median": 2.75,
+          "tokens_per_char_median": 0.4473684210526316,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "pan_Shah_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 58.11747137879542,
+          "tokens_per_word_mean": 2.3308725095400717,
+          "tokens_per_char_mean": 0.5248237128001073,
+          "tokens_per_sent_median": 55.0,
+          "tokens_per_word_median": 2.3076923076923075,
+          "tokens_per_char_median": 0.5228758169934641,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 0.0
+        },
+        "urd_rom": {
+          "n_sentences": 2009,
+          "tokens_per_sent_mean": 59.2906918865107,
+          "tokens_per_word_mean": 2.2120290149554185,
+          "tokens_per_char_mean": 0.5339323925644253,
+          "tokens_per_sent_median": 57.0,
+          "tokens_per_word_median": 2.193548387096774,
+          "tokens_per_char_median": 0.5319148936170213,
+          "unk_rate": 0.0,
+          "byte_fallback_rate": 0.0,
+          "fragment_rate": 2.5185744868404482e-05
+        }
+      },
+      "guru_vs_shah": {
+        "label_a": "gurmukhi",
+        "label_b": "shahmukhi",
+        "tokens": {
+          "mean_gurmukhi": 209.31408661025387,
+          "mean_shahmukhi": 88.81732205077152,
+          "ratio_b_over_a": 0.42432558404992005,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpw": {
+          "mean_gurmukhi": 8.375069736896549,
+          "mean_shahmukhi": 3.5608841867267826,
+          "ratio_b_over_a": 0.42517666104190527,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        },
+        "tpc": {
+          "mean_gurmukhi": 1.9894233353896291,
+          "mean_shahmukhi": 0.8932549701525547,
+          "ratio_b_over_a": 0.4490019566286079,
+          "wilcoxon_p": 0.0,
+          "n_pairs": 2009
+        }
+      }
+    }
+  }
+}

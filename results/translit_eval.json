@@ -1,0 +1,35 @@
+{
+  "n_sentences": 1000,
+  "n_word_pairs_unique": 778,
+  "s2g_naive_test_words": {
+    "cer": 0.5085877862595419,
+    "exact_match": 0.09012875536480687,
+    "n": 233,
+    "ci95": [
+      0.47470259763332157,
+      0.5411126961349626
+    ]
+  },
+  "s2g_naive_sentences": {
+    "cer": 0.3835505729738691,
+    "exact_match": 0.0,
+    "n": 1000
+  },
+  "s2g_context_test_words": {
+    "cer": 0.16030534351145037,
+    "exact_match": 0.4334763948497854,
+    "n": 233,
+    "ci95": [
+      0.140649164756337,
+      0.17957012312536813
+    ]
+  },
+  "s2g_context_sentences": {
+    "cer": 0.15108688894875355,
+    "exact_match": 0.039,
+    "n": 1000
+  },
+  "s2g_context_unwritten_share": 0.38691537512001095,
+  "g2s_rules_test_words_cer": 0.055776892430278883,
+  "g2s_rules_sentences_cer": 0.06402577464484183
+}
