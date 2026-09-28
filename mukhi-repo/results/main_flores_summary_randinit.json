@@ -1,0 +1,28 @@
+{
+  "xlm-roberta-base": {
+    "crossover_layer": 3,
+    "paired_final": {
+      "pan_Guru|pan_Shah": 0.427991371203277,
+      "pan_Guru|pan_Guru_devowel": 0.32718272370119295,
+      "pan_Guru_devowel|pan_Shah": 0.43327310577217437,
+      "pan_Shah|urd_Arab": 0.31662866818627905,
+      "hin_Deva|urd_Arab": 0.30713384728135706,
+      "pan_Guru_rom|pan_Shah_rom": 0.5059934686997667,
+      "pan_Shah_rom|urd_rom": 0.3036616436533999,
+      "srp_Cyrl|srp_Latn": 0.26488346643441335
+    }
+  },
+  "muril-base-cased": {
+    "crossover_layer": null,
+    "paired_final": {
+      "pan_Guru|pan_Shah": 0.3731666445259751,
+      "pan_Guru|pan_Guru_devowel": 0.32018423749168357,
+      "pan_Guru_devowel|pan_Shah": 0.36327244611496284,
+      "pan_Shah|urd_Arab": 0.3308118331541207,
+      "hin_Deva|urd_Arab": 0.3355830217472082,
+      "pan_Guru_rom|pan_Shah_rom": 0.49301875655897004,
+      "pan_Shah_rom|urd_rom": 0.33838212408140184,
+      "srp_Cyrl|srp_Latn": 0.6881159957702261
+    }
+  }
+}
