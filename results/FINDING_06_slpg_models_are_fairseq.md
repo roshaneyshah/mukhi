@@ -18,7 +18,10 @@ A core experimental condition should not rest on that.
 
 Gurmukhi -> Shahmukhi is the easy direction: Gurmukhi writes every vowel
 Shahmukhi needs. A rule system was built, its three ambiguous defaults
-grid-searched on the PuMVR dev split, and the held-out split scored once:
+grid-searched on the PuMVR dev split (12 configurations, dev CER 5.15% to
+8.76%. The shipped configuration is the dev winner, see
+`tools_g2s_grid.py` and `results/g2s_grid.json`), and the held-out split
+scored once:
 
 | split                 | CER   | 95% CI       | exact match |
 |-----------------------|------:|--------------|------------:|
@@ -36,7 +39,7 @@ chase.
 - The fairseq model is supported (`load_slpg_fairseq`) but GATED: the
   `g2s_compare` stage scores it on PuMVR in-session and it replaces the rules
   only if its CER is lower. SLPG report 99.5% word accuracy on FLORES-101, so
-  it may well win; the point is to measure rather than assume.
+  it may well win. The point is to measure rather than assume.
 - The paper must say the FLORES Shahmukhi is machine-generated. Generated
   Shahmukhi is more regular than natural writing (no idiosyncratic
   Arabic-origin spellings), which if anything makes the script contrast

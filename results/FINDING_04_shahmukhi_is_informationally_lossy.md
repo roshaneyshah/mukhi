@@ -1,7 +1,7 @@
 # Finding 04: the Punjabi pair is asymmetric in information, not only in resources
 
 Measured 2026-09-21 on PuMVR (Singh et al., EMNLP 2026 Findings), 1,000
-hand-verified parallel items, repository commit 2bc5464. Evaluation only; the
+hand-verified parallel items, repository commit 2bc5464. Evaluation only. The
 data is not redistributed (no licence file in the source repository).
 
 ## Transliteration quality
@@ -38,7 +38,7 @@ Punjabi is not. A Gurmukhi sentence carries vowel and gemination information
 its Shahmukhi twin does not. So the pair differs along two axes Serbian holds
 fixed:
 
-1. **resource**: how much of each script the model saw in pretraining;
+1. **resource**: how much of each script the model saw in pretraining.
 2. **information**: how much of the phonology each script encodes.
 
 Consequences:
@@ -46,7 +46,7 @@ Consequences:
 - The framing "unbalanced digraphia" should name both axes. It is a stronger
   contrast with Serbian than resource imbalance alone.
 - Any residual script gap in the representations is an upper bound on the
-  orthography effect proper; part of it can be the model genuinely having less
+  orthography effect proper. Part of it can be the model genuinely having less
   to go on. State this rather than let a reviewer find it.
 - The transliteration intervention (Shahmukhi -> Gurmukhi at inference) cannot
   restore information the input lacks. Its gain is bounded, and the NMT system
@@ -55,7 +55,7 @@ Consequences:
   form" from "script as information carrier".
 - The paired displacement statistic (FINDING_02) remains valid: content still
   cancels. But the displacement it measures bundles surface form with the
-  missing vowels; say so.
+  missing vowels. Say so.
 
 ## Uses in the pipeline
 

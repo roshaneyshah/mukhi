@@ -42,10 +42,14 @@ MODELS = [
     ("xlm-roberta-base",           "encoder", "mean", "fp16", None),
     ("google/muril-base-cased",    "encoder", "mean", "fp16", None),
     ("xlm-roberta-large",          "encoder", "mean", "fp16", None),
+    # A third XLM-R size, so the scale comparison of 5.7 has three points.
+    ("facebook/xlm-roberta-xl",    "encoder", "mean", "fp16", None),
     ("Qwen/Qwen2.5-1.5B",          "decoder", "last", "fp16", None),
-    ("google/gemma-2-2b",          "decoder", "last", "fp16", None),
+    ("google/gemma-2-2b",          "decoder", "last", "fp32", None),
     ("Qwen/Qwen2.5-3B",            "decoder", "last", "fp16", None),
     ("CohereLabs/aya-expanse-8b", "decoder", "last", "fp16", "auto"),
+    # Behavioural arm only: a decoder large enough to do the PuMVR task.
+    ("Qwen/Qwen2.5-7B",            "decoder", "last", "fp16", "auto"),
 ]
 
 
@@ -96,6 +100,15 @@ def selected_models(args):
                 kind = "decoder"
         out.append((m, kind, "last" if kind == "decoder" else "mean", "fp32", None))
     return out
+
+
+def _hf_token():
+    """The Hugging Face token, read at call time from either environment
+    variable. Passed explicitly to every gated load: whether the libraries
+    pick it up from the environment on their own has changed between
+    versions."""
+    return (os.environ.get("HF_TOKEN")
+            or os.environ.get("HUGGING_FACE_HUB_TOKEN") or None)
 
 
 def purge_model_cache(name, cache_dir):
@@ -222,7 +235,7 @@ def _g2s_fn(args):
 def stage_conditions(args):
     """Build and cache every condition text set once, so later stages never
     regenerate (and can never silently differ)."""
-    from conditions import load_flores, build_conditions, devowel_gurmukhi
+    from conditions import load_flores, build_conditions, devowel_gurmukhi, _nfc
     from translit_ctx import ctx_shah_to_gur
     from datasets import load_dataset
     g2s = _g2s_fn(args)
@@ -233,8 +246,13 @@ def stage_conditions(args):
 
     sib = {}
     for split in ("train", "validation", "test"):
-        g = load_dataset("Davlan/sib200", "pan_Guru", split=split, cache_dir=args.cache_dir)
-        texts = [r["text"] for r in g]
+        g = load_dataset("Davlan/sib200", "pan_Guru", split=split,
+                         cache_dir=args.cache_dir, token=_hf_token())
+        # NFC at the source, exactly as build_conditions does for FLORES. SIB
+        # is a second entry point and was missed by the first FINDING_09 fix,
+        # which left the de-voweled control differing from Gurmukhi in Unicode
+        # form in the intervention arm as well.
+        texts = [_nfc(r["text"]) for r in g]
         shah = [g2s(t) for t in texts]
         sib[split] = {"index_id": [r["index_id"] for r in g],
                       "label": [r["category"] for r in g],
@@ -250,13 +268,15 @@ def stage_conditions(args):
 def _pumvr_conditions():
     """Human-written parallel Punjabi (robustness set)."""
     from pumvr import load_pumvr_pairs
-    from conditions import devowel_gurmukhi, romanize
+    from conditions import devowel_gurmukhi, romanize, _nfc
     S, _, _ = load_pumvr_pairs(pumvr_json())
     ids = [x["item_id"] for x in S]
-    g = [x["gurmukhi"] for x in S]
-    s = [x["shahmukhi"] for x in S]
+    # NFC at the source here too: PuMVR is the third entry point that builds
+    # conditions, after FLORES and SIB (FINDING_09).
+    g = [_nfc(x["gurmukhi"]) for x in S]
+    s = [_nfc(x["shahmukhi"]) for x in S]
     cond = {"pan_Guru": g, "pan_Guru_devowel": [devowel_gurmukhi(t) for t in g],
-            "pan_Shah": s, "pan_Roman_human": [x["roman"] for x in S]}
+            "pan_Shah": s, "pan_Roman_human": [_nfc(x["roman"]) for x in S]}
     try:
         cond["pan_Guru_rom"] = romanize(g, "pan")
         cond["pan_Shah_rom"] = romanize(s, "pnb")
@@ -359,9 +379,19 @@ def _extract(texts, name, pool, dt, dmap, args):
 
 
 def _suffix(args):
+    # --pooling tags the filename so a mean-pooled decoder run never silently
+    # overwrites or is mistaken for the last-token run it replaces (FINDING_08).
+    pool = getattr(args, "pooling", "") or ""
+    tail = f"_pool{pool}" if pool else ""
+    # --out-tag keeps a partial rerun (a subset of contrasts) in its own file
+    # instead of overwriting a full run with fewer contrasts.
+    out_tag = getattr(args, "out_tag", "") or ""
+    if out_tag:
+        tail += "_" + out_tag
     if not getattr(args, "random_init", False):
-        return ""
-    return "_randinit" if args.seed == 0 else f"_randinit_s{args.seed}"
+        return tail
+    base = "_randinit" if args.seed == 0 else f"_randinit_s{args.seed}"
+    return base + tail
 
 
 def stage_main(args):
@@ -384,6 +414,8 @@ def stage_main(args):
 
     summary = {}
     for name, kind, pool, dt, dmap in selected_models(args):
+        if getattr(args, "pooling", ""):
+            pool = args.pooling
         tag = os.path.basename(name.rstrip("/"))
         outp = os.path.join(RESULTS, f"main_{args.data}_{tag}{_suffix(args)}.json")
         if os.path.exists(outp) and not args.force:
@@ -554,7 +586,7 @@ def stage_intervention_mcq(args):
         out[tag] = rec
         print(f"    {rec['acc']}  gain={rec['gain'][0]:+.3f}")
         del model
-    save("intervention_mcq.json", out)
+    save(f"intervention_mcq{_suffix(args)}.json", out)
 
 
 # ---------------------------------------------------------------------------
@@ -669,13 +701,588 @@ def stage_report(args):
     print(f"  -> {path}")
 
 
+
+
+# ---------------------------------------------------------------------------
+# Contrasts the bootstrap covers. The full contrast list is larger; these are
+# the ones the paper makes inferential claims about, and each extra one costs
+# a condition's worth of extraction.
+BOOT_CONTRASTS = [
+    ("pan_Guru", "pan_Shah", "punjabi"),
+    ("srp_Cyrl", "srp_Latn", "serbian"),
+    ("pan_Guru_devowel", "pan_Shah", "script_form"),
+    ("pan_Shah_rom", "urd_rom", "no_script"),
+    # A second information-matched control, from the other side. De-voweled
+    # Gurmukhi removes only the three marks Shahmukhi leaves unwritten, so it
+    # keeps MORE information than Shahmukhi (a lower bound on what is lost).
+    # Round-tripped Gurmukhi, Shahmukhi transliterated back by the rules, keeps
+    # only what survives Shahmukhi plus the rules' own errors (an upper bound).
+    # If the script-form share holds under both, the attribution does not
+    # depend on how exactly the information is matched.
+    ("pan_Guru_rt", "pan_Shah", "script_form_rt"),
+    # Two intermediate controls that test the bracket's assumption (5.3): the
+    # script-form share should fall steadily as information is removed. Each
+    # starts from de-voweled Gurmukhi and also collapses letter distinctions
+    # that Shahmukhi writes with one letter. Neither passes through the
+    # transliterator, so unlike the round trip they add no rule errors.
+    ("pan_Guru_dv1", "pan_Shah", "script_form_dv1"),
+    ("pan_Guru_dv2", "pan_Shah", "script_form_dv2"),
+    # The remaining contrasts of Table 2, so no reported contrast is left
+    # without an interval.
+    ("pan_Guru", "pan_Guru_devowel", "information"),
+    ("pan_Shah", "urd_Arab", "language"),
+    ("hin_Deva", "urd_Arab", "hindi_urdu"),
+    ("pan_Guru_rom", "pan_Shah_rom", "rom_info"),
+    # PuMVR only, where Shahmukhi is human-written. Generating Shahmukhi from
+    # the same human Gurmukhi gives the FLORES-style condition on identical
+    # sentences, so the Punjabi gap can be measured on generated and human
+    # Shahmukhi side by side: a direct test of the generated-text confound.
+    ("pan_Guru", "pan_Shah_gen", "punjabi_gen"),
+    ("pan_Shah_gen", "pan_Shah", "gen_vs_human"),
+]
+
+# Statistics bootstrapped for every contrast. consistency is the paper's
+# original measure; shared and rms are the two magnitudes it is the ratio of
+# (see src/bootstrap.py), added because consistency alone measures coherence
+# of direction, not distance.
+BOOT_STATS = ("consistency", "shared", "rms")
+
+# Contrasts processed together, so activations are held for at most three
+# conditions at once instead of all seven. XLM-R large is 25 layers x 2,009
+# items x 1,024 dims per condition, and the first two groups share pan_Shah,
+# so grouping avoids both a large peak and a re-extraction. Grouping also
+# means one condition failing to extract costs only its own group.
+BOOT_GROUPS = [["punjabi", "script_form", "script_form_rt", "script_form_dv1",
+                "script_form_dv2", "information"], ["serbian"],
+               ["language", "hindi_urdu"],
+               ["no_script", "rom_info"],
+               ["punjabi_gen", "gen_vs_human"]]
+
+
+def _boot_pass(args, name, kind, pool, dt, dmap, cond, needed, counts, seed_tag):
+    """Extract one pass and reduce it to bootstrap vectors, per contrast/layer.
+
+    Returns {contrast: {"point": [per layer], "draws": (L, n_boot) array}}.
+    Activations are freed group by group: only the reduced vectors are kept,
+    which is what lets four passes of a 25-layer model fit in one session.
+    """
+    import numpy as np
+    from bootstrap import bootstrap_stats, per_item_deltas, point_stats
+
+    by_label = {lab: (a, b) for a, b, lab in BOOT_CONTRASTS}
+    out = {}
+    for group in BOOT_GROUPS:
+        only = [x for x in str(getattr(args, "boot_only", "") or "").split(",") if x]
+        labels = [lab for lab in group
+                  if lab in by_label and all(c in cond for c in by_label[lab])
+                  and (not only or lab in only)]
+        if not labels:
+            continue
+        want = sorted({c for lab in labels for c in by_label[lab]})
+        acts = {}
+        try:
+            for c in want:
+                t0 = time.time()
+                acts[c], _info = _extract(cond[c], name, pool, dt, dmap, args)
+                # The published runs used different max_length per condition
+                # but truncated nothing, which is the only reason those
+                # activations and these are comparable. If anything truncates
+                # here, the interval would describe a different quantity than
+                # the point estimate it is attached to, so stop.
+                tf = float(_info.get("truncated_frac", 0.0) or 0.0)
+                if tf > 0:
+                    raise RuntimeError(
+                        f"{c}: {tf:.4f} of sentences truncated at "
+                        f"max_length={args.max_length}; the published runs "
+                        f"truncated none, so raise --max-length")
+                print(f"      {c:18s} {acts[c].shape}  trunc={tf:.3f} "
+                      f"({time.time() - t0:.0f}s)")
+        except Exception as e:
+            print(f"      group {labels} SKIP: {type(e).__name__}: {str(e)[:160]}")
+            del acts
+            continue
+
+        for lab in labels:
+            a, b = by_label[lab]
+            L = acts[a].shape[0]
+            P = {k: [] for k in BOOT_STATS}
+            D = {k: [] for k in BOOT_STATS}
+            for li in range(L):
+                delta, sq = per_item_deltas(acts[a][li], acts[b][li], normalise=True)
+                for k, v in zip(BOOT_STATS, point_stats(delta, sq)):
+                    P[k].append(v)
+                for k, v in zip(BOOT_STATS, bootstrap_stats(delta, sq, counts)):
+                    D[k].append(v)
+            pts = P["consistency"]
+            out[lab] = {"point": pts, "draws": np.array(D["consistency"]),
+                        "mag": {k: {"point": P[k], "draws": np.array(D[k])}
+                                for k in ("shared", "rms")}}
+            print(f"      {lab:12s} {seed_tag}  L0={pts[0]:.4f}  Lmid={pts[L // 2]:.4f}")
+        del acts
+    return out
+
+
+def _boot_crosscheck(args, tag, trained, rand, seeds=None):
+    """Check this run's point estimates against the published main_* files.
+
+    The interval is only meaningful if it is attached to the number the paper
+    actually quotes. Re-extraction could silently differ (a changed pooling,
+    a model revision, a truncation that did not happen before), and the
+    resulting interval would describe a different quantity. So compare, and
+    say so loudly rather than quietly shipping a mismatch.
+    """
+    import numpy as np
+    by_label = {lab: f"{a}|{b}" for a, b, lab in BOOT_CONTRASTS}
+    report = {}
+
+    def published(suffix):
+        # A pooling override names a different quantity from the published
+        # last-token files, so it is only ever compared with its own kind.
+        base_tag = tag[:-len("_poolmean")] if tag.endswith("_poolmean") else tag
+        pool = getattr(args, "pooling", "") or ""
+        suffix = suffix + (f"_pool{pool}" if pool else "")
+        path = os.path.join(RESULTS, f"main_{args.data}_{base_tag}{suffix}.json")
+        if not os.path.exists(path):
+            return None
+        return json.load(open(path)).get("contrasts", {})
+
+    # The resolved seed list, NOT a re-split of the raw spec. Re-splitting
+    # "*=0,1,2;xlm-roberta-large=0" on commas yielded labels like "*=0" and
+    # "2;xlm-roberta-large=0", whose suffixes matched no published file, so
+    # two of every four passes silently went unverified.
+    if seeds is None:
+        seeds = [int(x) for x in str(args.boot_random_seeds).split(",")
+                 if x.strip().isdigit()]
+    checks = [("trained", "", trained)]
+    for i, r in enumerate(rand):
+        seed = seeds[i] if i < len(seeds) else i
+        suffix = "_randinit" if seed == 0 else f"_randinit_s{seed}"
+        checks.append((f"random_s{seed}", suffix, r))
+
+    worst_overall = 0.0
+    problems = []
+    n_compared = [0]
+    for name_, suffix, got in checks:
+        pub = published(suffix)
+        if pub is None:
+            report[name_] = {"status": "no published file to compare"}
+            print(f"    crosscheck {name_:12s} no published file")
+            continue
+        per = {}
+        for lab, vals in got.items():
+            key = by_label.get(lab)
+            blk = pub.get(key)
+            if not blk or "paired" not in blk:
+                continue
+            ref = [x["consistency"] for x in blk["paired"]]
+            if len(ref) != len(vals["point"]):
+                # Counted as a failure, not skipped. A check that reports
+                # "ok" when it could not compare anything is worse than no
+                # check: it was a missing comparison, not a passing one.
+                per[lab] = {"comparable": False,
+                            "reason": "layer count differs",
+                            "published_layers": len(ref),
+                            "here_layers": len(vals["point"])}
+                continue
+            d = float(np.nanmax(np.abs(np.array(ref) - np.array(vals["point"]))))
+            per[lab] = {"comparable": True, "max_abs_diff": d,
+                        "agrees_to_3dp": bool(d < 5e-4)}
+            worst_overall = max(worst_overall, d)
+        report[name_] = per
+        if per:
+            comparable = [v for v in per.values() if v.get("comparable")]
+            bad = [lab for lab, v in per.items() if not v.get("comparable")]
+            w = max((v["max_abs_diff"] for v in comparable), default=None)
+            if bad:
+                problems.extend(f"{name_}/{lab}" for lab in bad)
+            if w is None:
+                print(f"    crosscheck {name_:12s} NOTHING COMPARABLE "
+                      f"({', '.join(bad)})")
+            else:
+                flag = "ok" if w < 5e-4 else "MISMATCH"
+                extra = f"  [{len(bad)} not comparable: {', '.join(bad)}]" if bad else ""
+                print(f"    crosscheck {name_:12s} {len(comparable)}/{len(per)} "
+                      f"contrasts, max |diff| {w:.2e}  {flag}{extra}")
+                n_compared[0] += len(comparable)
+    agrees = bool(n_compared[0] > 0 and worst_overall < 5e-4 and not problems)
+    if problems:
+        print(f"    WARNING: could not compare {len(problems)} contrast(s) "
+              f"against published results ({', '.join(problems[:6])}). Treat "
+              f"the intervals as describing THIS run only.")
+    if n_compared[0] == 0:
+        print("    WARNING: no contrast could be compared against a published "
+              "result, so nothing here confirms these intervals attach to the "
+              "numbers in the paper.")
+    elif worst_overall >= 5e-4:
+        print(f"    WARNING: this run's point estimates differ from the "
+              f"published ones by up to {worst_overall:.2e}. The intervals "
+              f"below describe THIS run, not the published numbers. Resolve "
+              f"before quoting them.")
+    report["worst_abs_diff"] = worst_overall if n_compared[0] else None
+    report["n_contrasts_compared"] = n_compared[0]
+    report["not_comparable"] = problems
+    report["agrees_with_published"] = agrees
+    return report
+
+
+def stage_bootstrap(args):
+    """Paired sentence-level bootstrap for trained minus random init.
+
+    The BH-corrected p values elsewhere test each run against a sign-flip
+    null. They do not test the quantity the paper actually reports, which is a
+    difference between two runs. This stage does, by resampling sentences and
+    recomputing both runs on the same resample, so the shared sentence noise
+    cancels inside each draw.
+
+    One run covers three comparisons: trained against random per layer, the
+    Punjabi trough against the Serbian trough, and (across models) base
+    against large.
+    """
+    import numpy as np
+    from analysis import benjamini_hochberg
+    from bootstrap import draw_counts, summarise
+
+    ids, cond, _ = _load_conditions(args)
+    n = len(ids)
+    if "pan_Guru_rt" not in cond and "pan_Shah" in cond:
+        from conditions import _nfc
+        from translit_ctx import ctx_shah_to_gur
+        cond["pan_Guru_rt"] = [_nfc(ctx_shah_to_gur(t)) for t in cond["pan_Shah"]]
+        print("  built pan_Guru_rt: Shahmukhi round-tripped to Gurmukhi by the rules")
+    if args.data == "pumvr" and "pan_Guru" in cond and "pan_Shah_gen" not in cond:
+        from translit_g2s import gur_to_shah
+        from conditions import _nfc as _n
+        cond["pan_Shah_gen"] = [_n(gur_to_shah(t)) for t in cond["pan_Guru"]]
+        print("  built pan_Shah_gen: Shahmukhi generated from the human Gurmukhi")
+    if "pan_Guru" in cond:
+        from conditions import collapse_gurmukhi
+        for lvl in (1, 2):
+            k = f"pan_Guru_dv{lvl}"
+            if k not in cond:
+                cond[k] = [collapse_gurmukhi(t, lvl) for t in cond["pan_Guru"]]
+                print(f"  built {k}: de-voweled Gurmukhi, collapse level {lvl}")
+    only = [x for x in str(getattr(args, "boot_only", "") or "").split(",") if x]
+    if only:
+        unknown = sorted(set(only) - {lab for _, _, lab in BOOT_CONTRASTS})
+        if unknown:
+            raise SystemExit(f"--boot-only: unknown contrasts {unknown}")
+        print(f"  restricted to contrasts: {only}")
+    active = [c for c in BOOT_CONTRASTS if not only or c[2] in only]
+    needed = sorted({c for a, b, _ in active for c in (a, b) if c in cond})
+    missing = sorted({c for a, b, _ in active for c in (a, b)} - set(cond))
+    print(f"[bootstrap] n={n} draws={args.n_boot} conditions={needed}")
+    if missing:
+        print(f"  conditions absent from this data set, contrasts skipped: {missing}")
+
+    # Drawn ONCE and shared by every model, pass, layer and contrast. This is
+    # the whole basis of the pairing: draw k means the same sentences
+    # everywhere, so any difference taken within draw k is paired.
+    counts = draw_counts(n, n_boot=args.n_boot, seed=args.boot_seed)
+    print(f"  shared resample matrix {counts.shape} seed={args.boot_seed}")
+
+    def seeds_for(tag):
+        """Seeds to average for one model.
+
+        Accepts a plain list ("0,1,2") applied to every model, or per-model
+        overrides ("*=0,1,2;xlm-roberta-large=0"). XLM-R large has a single
+        published random-init run, so averaging three here would make its
+        baseline a different quantity from the one the paper reports.
+        """
+        spec = str(args.boot_random_seeds)
+        if "=" not in spec:
+            return [int(x) for x in spec.split(",") if x != ""]
+        default = []
+        for part in spec.split(";"):
+            if not part.strip():
+                continue
+            k, _, v = part.partition("=")
+            vals = [int(x) for x in v.split(",") if x != ""]
+            if k.strip() in ("*", "default"):
+                default = vals
+            elif k.strip() == tag:
+                return vals
+        return default
+
+    per_model = {}
+
+    for name, kind, pool, dt, dmap in selected_models(args):
+        if getattr(args, "pooling", ""):
+            pool = args.pooling
+        if kind != "encoder" and pool != "mean":
+            print(f"  {name}: skipped, last-token decoders are excluded (Finding 8)")
+            continue
+        tag = os.path.basename(name.rstrip("/"))
+        if kind != "encoder":
+            # Its own tag, so a mean-pooled decoder is never compared against
+            # or mistaken for the excluded last-token run.
+            tag += "_poolmean"
+        print(f"  {tag}: trained pass")
+        try:
+            trained = _boot_pass(args, name, kind, pool, dt, dmap, cond,
+                                 needed, counts, "trained")
+        except Exception as e:
+            print(f"    SKIP: {type(e).__name__}: {str(e)[:200]}")
+            continue
+
+        seeds = seeds_for(tag)
+        if not seeds:
+            print(f"    {tag}: no random-init seeds configured, skipped")
+            continue
+        print(f"    random-init seeds to average: {seeds}")
+        rand, rand_seeds = [], []
+        for s in seeds:
+            print(f"  {tag}: random-init pass, seed {s}")
+            sub = argparse.Namespace(**vars(args))
+            sub.random_init = True
+            sub.seed = s
+            try:
+                rand.append(_boot_pass(sub, name, kind, pool, dt, dmap, cond,
+                                       needed, counts, f"random s{s}"))
+                rand_seeds.append(s)
+            except Exception as e:
+                print(f"    seed {s} SKIP: {type(e).__name__}: {str(e)[:200]}")
+        if not rand:
+            print(f"    {tag}: no random-init pass succeeded, nothing to difference")
+            continue
+
+        # trained minus the MEAN of the available random-init seeds, inside
+        # each draw. Averaging the seeds first (rather than differencing each
+        # and averaging after) matches how the paper quotes the baseline.
+        model_out = {"n_random_seeds": len(rand), "random_seeds": rand_seeds,
+                     "crosscheck": _boot_crosscheck(args, tag, trained, rand,
+                                                    seeds=seeds),
+                     "contrasts": {}}
+        for label in trained:
+            if not all(label in r for r in rand):
+                continue
+            L = len(trained[label]["point"])
+            rows = []
+            diff_draws = []
+            for li in range(L):
+                rd = np.mean([r[label]["draws"][li] for r in rand], axis=0)
+                d = trained[label]["draws"][li] - rd
+                point = trained[label]["point"][li] - float(
+                    np.mean([r[label]["point"][li] for r in rand]))
+                rows.append({"layer": li, **summarise(d, point=point),
+                             "trained": trained[label]["point"][li],
+                             "random_mean": float(np.mean(
+                                 [r[label]["point"][li] for r in rand]))})
+                diff_draws.append(d)
+            diff_draws = np.array(diff_draws)
+
+            # The trough layer is fixed on the full sample, then held fixed
+            # across draws. Re-minimising per draw bootstraps a selected
+            # minimum and biases the interval down; reported alongside as
+            # trough_refit, and not the interval for the quoted trough.
+            pts = np.array([r["point"] for r in rows], float)
+            tl = int(np.nanargmin(pts))
+            trough = {"layer": tl, **summarise(diff_draws[tl], point=float(pts[tl]))}
+            refit = summarise(np.nanmin(diff_draws, axis=0))
+
+            # Magnitudes. Trained minus mean random, per layer, with the same
+            # draws; the trough is each statistic's own full-sample argmin.
+            mag_out, mag_draws, mag_pts = {}, {}, {}
+            for stat in ("shared", "rms"):
+                if "mag" not in trained[label]:
+                    continue
+                t_pt = np.array(trained[label]["mag"][stat]["point"], float)
+                r_pt = np.mean([r[label]["mag"][stat]["point"] for r in rand], axis=0)
+                t_dr = trained[label]["mag"][stat]["draws"]
+                r_dr = np.mean([r[label]["mag"][stat]["draws"] for r in rand], axis=0)
+                dd = t_dr - r_dr
+                dp_ = t_pt - r_pt
+                ml = int(np.nanargmin(dp_))
+                mag_out[stat] = {
+                    "per_layer": [{"layer": li, "trained": float(t_pt[li]),
+                                   "random_mean": float(r_pt[li]),
+                                   **summarise(dd[li], point=float(dp_[li]))}
+                                  for li in range(L)],
+                    "trough": {"layer": ml, **summarise(dd[ml], point=float(dp_[ml]))},
+                    "at_consistency_trough": {"layer": tl, **summarise(
+                        dd[tl], point=float(dp_[tl]))},
+                    "embedding": summarise(dd[0], point=float(dp_[0])),
+                    "final": summarise(dd[-1], point=float(dp_[-1])),
+                }
+                mag_draws[stat], mag_pts[stat] = dd, dp_
+
+            # Robustness of the estimand (reviewer point 3): trained OVER
+            # random rather than minus it. Claims that hold on the difference
+            # but not the ratio depend on the choice of subtraction.
+            t_c = np.array(trained[label]["point"], float)
+            r_c = np.mean([r[label]["point"] for r in rand], axis=0)
+            r_cd = np.mean([r[label]["draws"] for r in rand], axis=0)
+            with np.errstate(divide="ignore", invalid="ignore"):
+                ratio_d = trained[label]["draws"] / r_cd
+                ratio_p = t_c / r_c
+            rl = int(np.nanargmin(ratio_p))
+            ratio_out = {
+                "per_layer": [{"layer": li, **summarise(ratio_d[li] - 1.0,
+                                                        point=float(ratio_p[li] - 1.0))}
+                              for li in range(L)],
+                "trough": {"layer": rl, **summarise(ratio_d[rl] - 1.0,
+                                                    point=float(ratio_p[rl] - 1.0))},
+                "note": "trained/random minus 1; excludes zero iff trained differs from random",
+            }
+
+            model_out["contrasts"][label] = {
+                "per_layer": rows,
+                "embedding": {**summarise(diff_draws[0], point=float(pts[0]))},
+                "final": {**summarise(diff_draws[-1], point=float(pts[-1]))},
+                "trough": trough,
+                "trough_refit": refit,
+                "magnitude": mag_out,
+                "ratio": ratio_out,
+                "_draws": diff_draws,          # kept in memory only
+                "_mag_draws": mag_draws,
+                "_mag_points": mag_pts,
+                "_ratio_draws": ratio_d,
+                "_ratio_points": ratio_p,
+                # Trained minus EACH seed separately, so any ordering can be
+                # checked seed by seed and not only on the seed mean.
+                "_seed_draws": {sd: trained[label]["draws"] - r[label]["draws"]
+                                for sd, r in zip(rand_seeds, rand)},
+                "_seed_points": {sd: np.array(trained[label]["point"], float)
+                                 - np.array(r[label]["point"], float)
+                                 for sd, r in zip(rand_seeds, rand)},
+            }
+            print(f"    {label:12s} trough L{tl} {pts[tl]:+.4f} "
+                  f"CI [{trough['ci95'][0]:+.4f}, {trough['ci95'][1]:+.4f}] "
+                  f"p={trough['p_boot']:.2g}")
+
+        # Section 5.4's ordering, tested rather than asserted. FLORES+ is
+        # parallel, so Punjabi and Serbian are the same sentences and the
+        # difference of the two troughs is paired at sentence level.
+        cs = model_out["contrasts"]
+        if "punjabi" in cs and "serbian" in cs:
+            pj_l = cs["punjabi"]["trough"]["layer"]
+            sb_l = cs["serbian"]["trough"]["layer"]
+            d = cs["punjabi"]["_draws"][pj_l] - cs["serbian"]["_draws"][sb_l]
+            model_out["punjabi_minus_serbian_trough"] = {
+                "punjabi_layer": pj_l, "serbian_layer": sb_l,
+                **summarise(d, point=cs["punjabi"]["trough"]["point"]
+                            - cs["serbian"]["trough"]["point"])}
+            t = model_out["punjabi_minus_serbian_trough"]
+            print(f"    Punjabi trough minus Serbian trough: {t['point']:+.4f} "
+                  f"CI [{t['ci95'][0]:+.4f}, {t['ci95'][1]:+.4f}] p={t['p_boot']:.2g}")
+
+        # The script-form ratio, as an interval rather than a layer average.
+        if "punjabi" in cs and "script_form" in cs:
+            num = cs["script_form"]["_draws"]
+            den = cs["punjabi"]["_draws"]
+            with np.errstate(divide="ignore", invalid="ignore"):
+                ratio = np.where(np.abs(den) > 1e-12, num / den, np.nan)
+            model_out["script_form_ratio"] = {
+                "layer_mean": summarise(np.nanmean(ratio, axis=0)),
+                "embedding": summarise(ratio[0]),
+                "final": summarise(ratio[-1]),
+            }
+            r = model_out["script_form_ratio"]["layer_mean"]
+            print(f"    script-form ratio, layer mean: {r['point']:.4f} "
+                  f"CI [{r['ci95'][0]:.4f}, {r['ci95'][1]:.4f}]")
+
+        per_model[tag] = model_out
+
+    # Section 5.7's scale claim: base against large, paired the same way.
+    across = {}
+    base, large = per_model.get("xlm-roberta-base"), per_model.get("xlm-roberta-large")
+    if base and large:
+        for label in ("punjabi", "serbian"):
+            if label in base["contrasts"] and label in large["contrasts"]:
+                bl = base["contrasts"][label]["trough"]["layer"]
+                ll = large["contrasts"][label]["trough"]["layer"]
+                d = (large["contrasts"][label]["_draws"][ll]
+                     - base["contrasts"][label]["_draws"][bl])
+                across[f"{label}_trough_large_minus_base"] = {
+                    "base_layer": bl, "large_layer": ll,
+                    **summarise(d, point=large["contrasts"][label]["trough"]["point"]
+                                - base["contrasts"][label]["trough"]["point"])}
+                t = across[f"{label}_trough_large_minus_base"]
+                print(f"  scale, {label} trough large minus base: {t['point']:+.4f} "
+                      f"CI [{t['ci95'][0]:+.4f}, {t['ci95'][1]:+.4f}] p={t['p_boot']:.2g}")
+
+    # BH over the whole per-layer family, as the rest of the paper does.
+    family = []
+    for tag, m in per_model.items():
+        for label, c in m["contrasts"].items():
+            for row in c["per_layer"]:
+                family.append((tag, label, row))
+    rows = [r for _, _, r in family if r["p_boot"] is not None]
+    ps = [r["p_boot"] for r in rows]
+    if ps:
+        rej, qs = benjamini_hochberg(ps, alpha=0.05)
+        for row, rj, qq in zip(rows, rej, qs):
+            row["q_bh"] = float(qq)
+            row["significant_bh"] = bool(rj)
+        n_sig = sum(1 for _, _, r in family if r.get("significant_bh"))
+        print(f"  BH over {len(ps)} per-layer tests: {n_sig} significant at q<0.05")
+
+    # The difference draws are a few MB per model. Saving them means any
+    # further comparison, or a re-reading of any interval, needs no GPU run:
+    # the expensive part is the extraction, and this is its reusable residue.
+    os.makedirs(RESULTS, exist_ok=True)
+    for tag, m in per_model.items():
+        arrs = {lab: c["_draws"] for lab, c in m["contrasts"].items()
+                if c.get("_draws") is not None}
+        if not arrs:
+            continue
+        # Save the FULL-SAMPLE point estimates beside the draws. Without them
+        # a later tool has to pick the trough layer from the mean over draws,
+        # which is a biased proxy and can select a different layer than the
+        # paper quotes; the two then report intervals for different troughs.
+        arrs.update({"point__" + lab: np.array(
+            [r["point"] for r in c["per_layer"]], dtype=np.float64)
+            for lab, c in m["contrasts"].items() if c.get("_draws") is not None})
+        # Magnitude and ratio draws, under "<stat>__<contrast>" keys, with
+        # their full-sample points under "point__<stat>__<contrast>".
+        for lab, c in m["contrasts"].items():
+            for stat, arr in (c.get("_mag_draws") or {}).items():
+                arrs["%s__%s" % (stat, lab)] = arr
+                arrs["point__%s__%s" % (stat, lab)] = c["_mag_points"][stat]
+            if c.get("_ratio_draws") is not None:
+                arrs["ratio__" + lab] = c["_ratio_draws"]
+                arrs["point__ratio__" + lab] = c["_ratio_points"]
+            for sd, arr in (c.get("_seed_draws") or {}).items():
+                arrs["seed%d__%s" % (sd, lab)] = arr
+                arrs["point__seed%d__%s" % (sd, lab)] = c["_seed_points"][sd]
+        # The model tag alone names this file, with no --out-tag suffix. The
+        # draws are already one file per model, and a suffix would double the
+        # tag (bootstrap_draws_flores_xlm-roberta-base_xlm-roberta-base.npz),
+        # which tools_bootstrap_crossmodel.py would parse as a model it has
+        # never heard of: the scale comparison would come back silently empty
+        # rather than failing.
+        dp = os.path.join(RESULTS, f"bootstrap_draws_{args.data}_{tag}.npz")
+        np.savez_compressed(dp, counts_seed=np.array([args.boot_seed]),
+                            n_boot=np.array([args.n_boot]),
+                            n_items=np.array([n]), **arrs)
+        m["draws_file"] = os.path.basename(dp)
+        print(f"  saved draws: {os.path.basename(dp)} "
+              f"({os.path.getsize(dp) // 1024} KB)")
+
+    for m in per_model.values():                       # drop the draw arrays
+        for c in m["contrasts"].values():
+            for k in ("_draws", "_mag_draws", "_mag_points", "_ratio_draws",
+                      "_ratio_points", "_seed_draws", "_seed_points"):
+                c.pop(k, None)
+
+    save(f"bootstrap_{args.data}{_suffix(args)}.json",
+         {"n": n, "n_boot": args.n_boot, "boot_seed": args.boot_seed,
+          "statistic": "trained consistency minus mean random-init consistency",
+          "pairing": "one shared sentence resample per draw across every model, "
+                     "pass, layer and contrast",
+          "captures": "sentence-sampling uncertainty only; random-init seed "
+                      "spread is a separate source and reported separately",
+          "bh_family_size": len(ps) if ps else 0,
+          "seed_spec": str(args.boot_random_seeds),
+          "per_model": per_model, "across_models": across})
+
+
 # ---------------------------------------------------------------------------
 STAGES = {"smoke": stage_smoke, "translit_eval": stage_translit_eval,
           "g2s_compare": stage_g2s_compare, "conditions": stage_conditions,
           "fertility": stage_fertility, "audit": stage_audit,
           "score_audit": stage_score_audit, "main": stage_main,
           "intervention": stage_intervention, "intervention_mcq": stage_intervention_mcq,
-          "report": stage_report}
+          "bootstrap": stage_bootstrap, "report": stage_report}
 
 
 def build_parser():
@@ -704,8 +1311,32 @@ def build_parser():
                     help="save/load activations here (fp16 .npy per model x condition)")
     ap.add_argument("--extract-only", action="store_true", dest="extract_only",
                     help="GPU session: extract and save, skip analysis (needs --acts-dir)")
+    ap.add_argument("--boot-only", default="", dest="boot_only",
+                    help="comma-separated bootstrap contrasts to run (default all)")
+    ap.add_argument("--out-tag", default="", dest="out_tag",
+                    help="suffix for the output filename. Use it when "
+                         "rerunning a subset of contrasts, so the partial "
+                         "result does not overwrite a full one.")
+    ap.add_argument("--pooling", default="", choices=["", "mean", "last"],
+                    help="override each model's default pooling. Decoders "
+                         "default to last-token, which FINDING_08 shows turns "
+                         "the paired statistic into a punctuation probe; "
+                         "--pooling mean makes them comparable to the "
+                         "encoders. Output filenames carry a _poolmean tag.")
     ap.add_argument("--seed", type=int, default=0,
                     help="random-init seed; run 3+ seeds and the report averages them")
+    ap.add_argument("--n-boot", type=int, default=2000, dest="n_boot",
+                    help="bootstrap draws for --stage bootstrap. The p value "
+                         "cannot resolve below 1/n_boot, so 2,000 is the floor "
+                         "for a two-sided 0.001.")
+    ap.add_argument("--boot-seed", type=int, default=12345, dest="boot_seed",
+                    help="seed for the shared sentence resample. One matrix is "
+                         "drawn per run and reused across every model, pass, "
+                         "layer and contrast; that sharing is what makes the "
+                         "differences paired.")
+    ap.add_argument("--boot-random-seeds", default="0,1,2", dest="boot_random_seeds",
+                    help="random-init seeds to average inside each draw. Pass "
+                         "a single value for a model that has only one.")
     return ap
 
 

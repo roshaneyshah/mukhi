@@ -1,5 +1,32 @@
 {
-  "cer_vs_gurmukhi": 0.15108688894875355,
-  "cer_vs_devowel": 0.10402368456466156,
-  "frac_chars_removed": 0.0760718652216259
+  "computed": "2026-10-08",
+  "source": "results/conditions_flores.json, results/conditions_sib.json",
+  "script": "tools_devowel_check.py",
+  "marks_removed": [
+    "ਿ",
+    "ੁ",
+    "ੱ"
+  ],
+  "nfc_applied": true,
+  "flores": {
+    "n_sentences": 2009,
+    "n_chars": 262101,
+    "frac_chars_removed": 0.06751977291196905
+  },
+  "sib": {
+    "n_sentences": 1004,
+    "n_chars": 132210,
+    "frac_chars_removed": 0.06574389229256486
+  },
+  "flores_rule_violations_in_first_200": 0,
+  "sib_translit": {
+    "n_pairs": 1004,
+    "cer_vs_gurmukhi": 0.15116103169200515,
+    "cer_vs_devowel": 0.10307809388105377
+  },
+  "flores_translit": {
+    "n_pairs": 2009,
+    "cer_vs_gurmukhi": 0.15031228419578713,
+    "cer_vs_devowel": 0.1022078198392825
+  }
 }

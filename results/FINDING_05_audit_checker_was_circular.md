@@ -18,7 +18,7 @@ Two problems:
 
 Flag a pair when an INDEPENDENT rule-based transliteration of its Shahmukhi
 side disagrees with its own Gurmukhi side, after removing the differences no
-rule could resolve (unwritten short vowels and gemination; the ambiguous
+rule could resolve (unwritten short vowels and gemination. The ambiguous
 vowel and nasal letters). The NMT output is kept as a display column for the
 annotator only.
 

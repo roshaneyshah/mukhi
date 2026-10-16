@@ -40,7 +40,7 @@ every cell.
 
 ## Consequences adopted in the pipeline
 
-- `unbiased_linear_cka` is the default estimator; the biased one is retained
+- `unbiased_linear_cka` is the default estimator. The biased one is retained
   only for comparability with prior work that used it.
 - Every reported CKA ships with a row-permutation baseline over the same
   matrices, and the headline quantity is `delta = aligned - baseline_mean`.
