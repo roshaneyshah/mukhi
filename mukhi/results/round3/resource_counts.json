@@ -1,0 +1,189 @@
+{
+  "note": "CC-100 is the corpus released as XLM-R's training data. Arabic-script lines are split by function words; see classifier_validation for its accuracy.",
+  "classifier_validation": {
+    "pan_Shah": {
+      "n": 2009,
+      "correct": 0.9462419113987058,
+      "wrong": 0.010452961672473868,
+      "undecided": 0.04330512692882031
+    },
+    "urd_Arab": {
+      "n": 2009,
+      "correct": 0.9970134395221503,
+      "wrong": 0.0004977600796416127,
+      "undecided": 0.0024888003982080635
+    },
+    "pumvr_human_shahmukhi": {
+      "n": 1000,
+      "correct": 0.597,
+      "wrong": 0.016,
+      "undecided": 0.387
+    }
+  },
+  "wikipedia": {
+    "pa": {
+      "articles": 59746,
+      "pages": 193594,
+      "edits": 848242
+    },
+    "pnb": {
+      "articles": 75770,
+      "pages": 146992,
+      "edits": 709726
+    },
+    "ur": {
+      "articles": 705511,
+      "pages": 3084088,
+      "edits": 12132944
+    },
+    "sr": {
+      "articles": 709854,
+      "pages": 4129686,
+      "edits": 31807155
+    },
+    "sh": {
+      "articles": 461942,
+      "pages": 4631983,
+      "edits": 42689404
+    }
+  },
+  "vocabularies": {
+    "xlm-roberta-base": {
+      "vocab_size": 250002,
+      "entries_with_script": {
+        "gurmukhi": 1675,
+        "arabic": 14644,
+        "cyrillic": 31671,
+        "latin": 109893,
+        "devanagari": 7726
+      }
+    },
+    "google/muril-base-cased": {
+      "vocab_size": 197258,
+      "entries_with_script": {
+        "gurmukhi": 8063,
+        "arabic": 16374,
+        "cyrillic": 49,
+        "latin": 37107,
+        "devanagari": 36110
+      }
+    },
+    "Qwen/Qwen2.5-1.5B": {
+      "vocab_size": 151665,
+      "entries_with_script": {
+        "gurmukhi": 10,
+        "arabic": 4018,
+        "cyrillic": 4129,
+        "latin": 94325,
+        "devanagari": 71
+      }
+    },
+    "Qwen/Qwen2.5-3B": {
+      "vocab_size": 151665,
+      "entries_with_script": {
+        "gurmukhi": 10,
+        "arabic": 4018,
+        "cyrillic": 4129,
+        "latin": 94325,
+        "devanagari": 71
+      }
+    },
+    "google/gemma-2-2b": {
+      "vocab_size": 256000,
+      "entries_with_script": {
+        "gurmukhi": 144,
+        "arabic": 6272,
+        "cyrillic": 13116,
+        "latin": 185349,
+        "devanagari": 1516
+      }
+    }
+  },
+  "cc100": {
+    "pa": {
+      "bytes_read": 874683638,
+      "complete": true,
+      "lines": {
+        "gurmukhi": 3768905,
+        "latin": 45251,
+        "cyrillic": 56,
+        "arabic": 3
+      },
+      "letters": {
+        "gurmukhi": 265472195,
+        "latin": 3535088,
+        "cyrillic": 2656,
+        "arabic": 179
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 3
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 179
+      },
+      "seconds": 307,
+      "status": "ok"
+    },
+    "pnb": {
+      "status": "not available: HTTPError: HTTP Error 404: Not Found"
+    },
+    "ur": {
+      "bytes_read": 4043309132,
+      "complete": false,
+      "lines": {
+        "arabic": 16634516,
+        "latin": 61823,
+        "cyrillic": 39,
+        "gurmukhi": 1
+      },
+      "letters": {
+        "arabic": 1761517998,
+        "latin": 3085983,
+        "cyrillic": 2589,
+        "gurmukhi": 21
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 101311,
+        "urdu": 14982101,
+        "undecided": 1551104
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 2156483,
+        "urdu": 1728384715,
+        "undecided": 30976800
+      },
+      "seconds": 2402,
+      "status": "ok"
+    },
+    "sr": {
+      "bytes_read": 3841982649,
+      "complete": false,
+      "lines": {
+        "cyrillic": 12743286,
+        "latin": 175851,
+        "arabic": 11
+      },
+      "letters": {
+        "cyrillic": 1701522860,
+        "latin": 10732966,
+        "arabic": 473
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 11
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 473
+      },
+      "seconds": 2407,
+      "status": "ok"
+    }
+  }
+}

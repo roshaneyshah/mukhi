@@ -1,0 +1,68 @@
+{
+  "punjabi": {
+    "gurmukhi_letters": 265472195,
+    "shahmukhi_letters_classified": 3391089,
+    "shahmukhi_letters_corrected": 2207751.5460284064,
+    "shahmukhi_over_gurmukhi_raw": 0.012773801037807368,
+    "shahmukhi_over_gurmukhi_corrected": 0.008316319326882449,
+    "shahmukhi_letters_corrected_human_recall": 3499274.778571804,
+    "shahmukhi_over_gurmukhi_corrected_human_recall": 0.013181323108327047,
+    "urdu_letters": 2615762112,
+    "pnb_file_in_cc100": false,
+    "correction": "subtract Urdu misread as Punjabi (FLORES false-positive rate), divide by FLORES recall on Shahmukhi"
+  },
+  "serbian": {
+    "cyrillic_letters_est": 4313732211.99483,
+    "latin_letters_under_sr_est": 27534920.08410931,
+    "latin_share_of_sr_file": 0.006342599809314989,
+    "latin_serbo_croatian_letters_est": 17421158965.549747,
+    "latin_serbo_croatian_over_serbian_cyrillic": 4.038535103571846,
+    "ekavian_latin_letters_est": 236172939.885525,
+    "ekavian_latin_over_serbian_cyrillic": 0.05474909620695018,
+    "ekavian_share_of_decided_hr_raw": 0.033036590938694134,
+    "croatian_false_ekavian_rate": 0.021844660194174755,
+    "fractions_read": {
+      "sr": 0.7166517985061482,
+      "hr": 0.15111442655935212,
+      "bs": 1.0
+    }
+  },
+  "classifier_validation": {
+    "pan_Shah": {
+      "n": 2009,
+      "correct": 0.9462419113987058,
+      "wrong": 0.010452961672473868,
+      "undecided": 0.04330512692882031
+    },
+    "urd_Arab": {
+      "n": 2009,
+      "correct": 0.9970134395221503,
+      "wrong": 0.0004977600796416127,
+      "undecided": 0.0024888003982080635
+    },
+    "srp_Latn": {
+      "n": 2009,
+      "correct": 0.22747635639621702,
+      "wrong": 0.0,
+      "undecided": 0.772523643603783
+    },
+    "hrv_Latn": {
+      "n": 2009,
+      "correct": 0.20059731209556994,
+      "wrong": 0.004479840716774514,
+      "undecided": 0.7949228471876556
+    },
+    "bos_Latn": {
+      "n": 2009,
+      "correct": 0.20507715281234445,
+      "wrong": 0.006470881035340966,
+      "undecided": 0.7884519661523146
+    },
+    "pumvr_human_shahmukhi": {
+      "n": 1000,
+      "correct": 0.597,
+      "wrong": 0.016,
+      "undecided": 0.387
+    }
+  }
+}

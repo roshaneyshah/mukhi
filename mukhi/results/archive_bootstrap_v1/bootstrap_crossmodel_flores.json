@@ -1,0 +1,240 @@
+{
+  "data": "flores",
+  "source_files": {
+    "muril-base-cased": "bootstrap_draws_flores_muril-base-cased.npz",
+    "xlm-roberta-base": "bootstrap_draws_flores_xlm-roberta-base.npz",
+    "xlm-roberta-large": "bootstrap_draws_flores_xlm-roberta-large.npz"
+  },
+  "per_model": {
+    "muril-base-cased": {
+      "punjabi": {
+        "trough_layer": 1,
+        "point": 0.26550411026473564,
+        "boot_mean": 0.2652153234680493,
+        "ci95": [
+          0.2628628889719645,
+          0.2675841341416041
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 7,
+        "point": 0.23614093030213318,
+        "boot_mean": 0.23589264982442062,
+        "ci95": [
+          0.2319443464279175,
+          0.23973793412248295
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 4,
+        "point": 0.18229445972614355,
+        "boot_mean": 0.18218082012732825,
+        "ci95": [
+          0.17966452687978746,
+          0.18467705845832824
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 9,
+        "point": -0.04843070519669285,
+        "boot_mean": -0.04840548319617908,
+        "ci95": [
+          -0.05436410655577977,
+          -0.04224019919832548
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 1,
+        "serbian_layer": 4,
+        "point": 0.08320965053859208,
+        "boot_mean": 0.08303450334072113,
+        "ci95": [
+          0.07968619068463642,
+          0.08661455685893689
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    },
+    "xlm-roberta-base": {
+      "punjabi": {
+        "trough_layer": 4,
+        "point": 0.3229384318538279,
+        "boot_mean": 0.3226443957487742,
+        "ci95": [
+          0.3195736269156138,
+          0.32571213841438296
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 5,
+        "point": 0.2841804212755806,
+        "boot_mean": 0.28390276086827115,
+        "ci95": [
+          0.2807709135115146,
+          0.2871080219745636
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 5,
+        "point": 0.10539080560095876,
+        "boot_mean": 0.1052043584138155,
+        "ci95": [
+          0.1008243538439274,
+          0.10924957195917767
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 2,
+        "point": -0.009094993286685005,
+        "boot_mean": -0.009045698508620262,
+        "ci95": [
+          -0.014177232980728132,
+          -0.003643617282311141
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 4,
+        "serbian_layer": 5,
+        "point": 0.21754762625286916,
+        "boot_mean": 0.2174400373349587,
+        "ci95": [
+          0.21233034854133923,
+          0.22233445098002752
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    },
+    "xlm-roberta-large": {
+      "punjabi": {
+        "trough_layer": 15,
+        "point": 0.32080144322111726,
+        "boot_mean": 0.32046142873167993,
+        "ci95": [
+          0.3160472072660923,
+          0.3250015422701836
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 15,
+        "point": 0.24840334646779205,
+        "boot_mean": 0.24810964681208134,
+        "ci95": [
+          0.24322695434093475,
+          0.25322546511888505
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 11,
+        "point": 0.05911474586330401,
+        "boot_mean": 0.05893604162335396,
+        "ci95": [
+          0.05280977487564087,
+          0.06492018774151802
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 3,
+        "point": 0.01041778423267481,
+        "boot_mean": 0.010495388731360435,
+        "ci95": [
+          0.005793760716915131,
+          0.01530899703502653
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 15,
+        "serbian_layer": 11,
+        "point": 0.26168669735781325,
+        "boot_mean": 0.26152538710832596,
+        "ci95": [
+          0.2543539084494114,
+          0.2688913755118847
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    }
+  },
+  "across_models": {
+    "punjabi_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 4,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.002136988632710668,
+      "boot_mean": -0.0021829670170942935,
+      "ci95": [
+        -0.006938454508781433,
+        0.0024339062472184658
+      ],
+      "p_boot": 0.359,
+      "excludes_zero": false,
+      "n_draws": 2000
+    },
+    "serbian_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 11,
+      "point": -0.04627605973765475,
+      "boot_mean": -0.04626831679046154,
+      "ci95": [
+        -0.0519974278906981,
+        -0.04070213610927265
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "script_form_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.03577707480778852,
+      "boot_mean": -0.03579311405618986,
+      "ci95": [
+        -0.04067285234729447,
+        -0.030998492737611138
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    }
+  }
+}

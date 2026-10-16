@@ -1,0 +1,195 @@
+{
+  "note": "CC-100 is the corpus released as XLM-R's training data. Arabic-script lines are split by function words; see classifier_validation for its accuracy.",
+  "classifier_validation": {
+    "pan_Shah": {
+      "n": 2009,
+      "correct": 0.9462419113987058,
+      "wrong": 0.010452961672473868,
+      "undecided": 0.04330512692882031
+    },
+    "urd_Arab": {
+      "n": 2009,
+      "correct": 0.9970134395221503,
+      "wrong": 0.0004977600796416127,
+      "undecided": 0.0024888003982080635
+    },
+    "srp_Latn": {
+      "n": 2009,
+      "correct": 0.22747635639621702,
+      "wrong": 0.0,
+      "undecided": 0.772523643603783
+    },
+    "hrv_Latn": {
+      "n": 2009,
+      "correct": 0.20059731209556994,
+      "wrong": 0.004479840716774514,
+      "undecided": 0.7949228471876556
+    },
+    "bos_Latn": {
+      "n": 2009,
+      "correct": 0.20507715281234445,
+      "wrong": 0.006470881035340966,
+      "undecided": 0.7884519661523146
+    },
+    "pumvr_human_shahmukhi": {
+      "n": 1000,
+      "correct": 0.597,
+      "wrong": 0.016,
+      "undecided": 0.387
+    }
+  },
+  "cc100": {
+    "sr": {
+      "bytes_read": 6979321885,
+      "complete": false,
+      "lines": {
+        "cyrillic": 23237627,
+        "latin": 327160,
+        "arabic": 14
+      },
+      "letters": {
+        "cyrillic": 3091443948,
+        "latin": 19732950,
+        "arabic": 722
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 14
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 722
+      },
+      "latin_lines_by_variety": {
+        "ekavian": 7444,
+        "ijekavian": 542,
+        "undecided": 319174
+      },
+      "latin_letters_by_variety": {
+        "ekavian": 856113,
+        "ijekavian": 107303,
+        "undecided": 18769534
+      },
+      "seconds": 6010,
+      "compressed_bytes_read": 1131585536,
+      "compressed_bytes_total": 1578989320,
+      "fraction_of_file": 0.7166517985061482,
+      "status": "ok"
+    },
+    "hr": {
+      "bytes_read": 3338666015,
+      "complete": false,
+      "lines": {
+        "latin": 18473170,
+        "arabic": 2
+      },
+      "letters": {
+        "latin": 2617319770,
+        "arabic": 51
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 2
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 51
+      },
+      "latin_lines_by_variety": {
+        "ekavian": 192870,
+        "ijekavian": 4450774,
+        "undecided": 13829526
+      },
+      "latin_letters_by_variety": {
+        "ekavian": 36307630,
+        "ijekavian": 1062704979,
+        "undecided": 1518307161
+      },
+      "seconds": 6006,
+      "compressed_bytes_read": 910958592,
+      "compressed_bytes_total": 6028270184,
+      "fraction_of_file": 0.15111442655935212,
+      "status": "ok"
+    },
+    "bs": {
+      "bytes_read": 94345621,
+      "complete": true,
+      "lines": {
+        "latin": 610813
+      },
+      "letters": {
+        "latin": 73505579
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 0
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 0,
+        "urdu": 0,
+        "undecided": 0
+      },
+      "latin_lines_by_variety": {
+        "ekavian": 15593,
+        "ijekavian": 73995,
+        "undecided": 521225
+      },
+      "latin_letters_by_variety": {
+        "ekavian": 2528508,
+        "ijekavian": 13168376,
+        "undecided": 57808695
+      },
+      "seconds": 243,
+      "compressed_bytes_read": 18434032,
+      "compressed_bytes_total": 18434032,
+      "fraction_of_file": 1.0,
+      "status": "ok"
+    },
+    "ur": {
+      "bytes_read": 6122398758,
+      "complete": true,
+      "lines": {
+        "arabic": 25601514,
+        "latin": 93742,
+        "cyrillic": 53,
+        "gurmukhi": 2
+      },
+      "letters": {
+        "arabic": 2667839164,
+        "latin": 4554186,
+        "cyrillic": 3122,
+        "gurmukhi": 42
+      },
+      "arabic_lines_by_variety": {
+        "punjabi": 160373,
+        "urdu": 22959578,
+        "undecided": 2481563
+      },
+      "arabic_letters_by_variety": {
+        "punjabi": 3391089,
+        "urdu": 2615762112,
+        "undecided": 48685963
+      },
+      "latin_lines_by_variety": {
+        "ekavian": 12,
+        "ijekavian": 1,
+        "undecided": 93729
+      },
+      "latin_letters_by_variety": {
+        "ekavian": 805,
+        "ijekavian": 63,
+        "undecided": 4553318
+      },
+      "seconds": 5201,
+      "compressed_bytes_read": 926752368,
+      "compressed_bytes_total": 926752368,
+      "fraction_of_file": 1.0,
+      "status": "ok"
+    }
+  }
+}

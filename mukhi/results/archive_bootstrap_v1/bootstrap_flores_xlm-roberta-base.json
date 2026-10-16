@@ -1,0 +1,1337 @@
+{
+  "n": 2009,
+  "n_boot": 2000,
+  "boot_seed": 12345,
+  "statistic": "trained consistency minus mean random-init consistency",
+  "pairing": "one shared sentence resample per draw across every model, pass, layer and contrast",
+  "captures": "sentence-sampling uncertainty only; random-init seed spread is a separate source and reported separately",
+  "bh_family_size": 52,
+  "seed_spec": "*=0,1,2;xlm-roberta-large=0",
+  "per_model": {
+    "xlm-roberta-base": {
+      "n_random_seeds": 3,
+      "random_seeds": [
+        0,
+        1,
+        2
+      ],
+      "crosscheck": {
+        "trained": {
+          "punjabi": {
+            "comparable": true,
+            "max_abs_diff": 0.0,
+            "agrees_to_3dp": true
+          },
+          "script_form": {
+            "comparable": true,
+            "max_abs_diff": 6.343938164588003e-05,
+            "agrees_to_3dp": true
+          },
+          "serbian": {
+            "comparable": true,
+            "max_abs_diff": 3.700187414068523e-05,
+            "agrees_to_3dp": true
+          },
+          "no_script": {
+            "comparable": true,
+            "max_abs_diff": 2.8193232097684096e-05,
+            "agrees_to_3dp": true
+          }
+        },
+        "random_s*=0": {
+          "status": "no published file to compare"
+        },
+        "random_s1": {
+          "punjabi": {
+            "comparable": true,
+            "max_abs_diff": 0.0,
+            "agrees_to_3dp": true
+          },
+          "script_form": {
+            "comparable": true,
+            "max_abs_diff": 3.329101621851738e-05,
+            "agrees_to_3dp": true
+          },
+          "serbian": {
+            "comparable": true,
+            "max_abs_diff": 8.656290069691819e-05,
+            "agrees_to_3dp": true
+          },
+          "no_script": {
+            "comparable": true,
+            "max_abs_diff": 1.0647745208425263e-05,
+            "agrees_to_3dp": true
+          }
+        },
+        "random_s2;xlm-roberta-large=0": {
+          "status": "no published file to compare"
+        },
+        "worst_abs_diff": 8.656290069691819e-05,
+        "n_contrasts_compared": 8,
+        "not_comparable": [],
+        "agrees_with_published": true
+      },
+      "contrasts": {
+        "punjabi": {
+          "per_layer": [
+            {
+              "layer": 0,
+              "point": 0.5370874101572634,
+              "boot_mean": 0.5366702465862035,
+              "ci95": [
+                0.5335626567403476,
+                0.5399376593530179
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.9516469207975089,
+              "random_mean": 0.4145595106402455,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 1,
+              "point": 0.43504448070574936,
+              "boot_mean": 0.4346730110893646,
+              "ci95": [
+                0.43130825559298197,
+                0.4380760816236337
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8472653676885671,
+              "random_mean": 0.4122208869828177,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 2,
+              "point": 0.36602650536215636,
+              "boot_mean": 0.36568349335094297,
+              "ci95": [
+                0.3620198455949625,
+                0.369346189002196
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7765490928847661,
+              "random_mean": 0.4105225875226098,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 3,
+              "point": 0.33311735381545327,
+              "boot_mean": 0.33280619541307294,
+              "ci95": [
+                0.3294222757220268,
+                0.3359434694051743
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7457437050628968,
+              "random_mean": 0.4126263512474435,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 4,
+              "point": 0.3229384318538279,
+              "boot_mean": 0.3226443957487742,
+              "ci95": [
+                0.3195736269156138,
+                0.32571213841438296
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7353545973543714,
+              "random_mean": 0.41241616550054344,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 5,
+              "point": 0.32741575172211934,
+              "boot_mean": 0.3271115995248159,
+              "ci95": [
+                0.3241386311749617,
+                0.32999594261248905
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7365479532635298,
+              "random_mean": 0.4091322015414105,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 6,
+              "point": 0.3316383424130198,
+              "boot_mean": 0.33133315082887804,
+              "ci95": [
+                0.3283885267873605,
+                0.3343519873917103
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7399289810101932,
+              "random_mean": 0.4082906385971734,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 7,
+              "point": 0.3359702935363703,
+              "boot_mean": 0.33565588307877386,
+              "ci95": [
+                0.3326150851945082,
+                0.33863169575730956
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7513464665515234,
+              "random_mean": 0.41537617301515306,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 8,
+              "point": 0.3555937580452851,
+              "boot_mean": 0.3552691863278548,
+              "ci95": [
+                0.35229694421092667,
+                0.3583360714217027
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7737238041689544,
+              "random_mean": 0.4181300461236693,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 9,
+              "point": 0.3786008767888709,
+              "boot_mean": 0.3782735486974319,
+              "ci95": [
+                0.37501168375213945,
+                0.3815939744313558
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7936081958887804,
+              "random_mean": 0.4150073190999095,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 10,
+              "point": 0.3984663670984968,
+              "boot_mean": 0.39812262988587227,
+              "ci95": [
+                0.3947930529713631,
+                0.4014052828152974
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8187500962771058,
+              "random_mean": 0.420283729178609,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 11,
+              "point": 0.42485434755586476,
+              "boot_mean": 0.4245090485860904,
+              "ci95": [
+                0.4212528139352798,
+                0.42780210450291634
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.847634385626991,
+              "random_mean": 0.42278003807112624,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 12,
+              "point": 0.4431097132303545,
+              "boot_mean": 0.44275072993834813,
+              "ci95": [
+                0.4395515441894531,
+                0.4460349192221959
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8626042856887227,
+              "random_mean": 0.41949457245836824,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            }
+          ],
+          "embedding": {
+            "point": 0.5370874101572634,
+            "boot_mean": 0.5366702465862035,
+            "ci95": [
+              0.5335626567403476,
+              0.5399376593530179
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "final": {
+            "point": 0.4431097132303545,
+            "boot_mean": 0.44275072993834813,
+            "ci95": [
+              0.4395515441894531,
+              0.4460349192221959
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough": {
+            "layer": 4,
+            "point": 0.3229384318538279,
+            "boot_mean": 0.3226443957487742,
+            "ci95": [
+              0.3195736269156138,
+              0.32571213841438296
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough_refit": {
+            "point": 0.3226443957487742,
+            "boot_mean": 0.3226443957487742,
+            "ci95": [
+              0.3195736269156138,
+              0.32571213841438296
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          }
+        },
+        "script_form": {
+          "per_layer": [
+            {
+              "layer": 0,
+              "point": 0.5232472105602491,
+              "boot_mean": 0.522844198147456,
+              "ci95": [
+                0.5196486120422681,
+                0.5261520989239216
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.9524304896180286,
+              "random_mean": 0.4291832790577794,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 1,
+              "point": 0.4253078359026826,
+              "boot_mean": 0.4249423641810814,
+              "ci95": [
+                0.42148426473140715,
+                0.4283284274240335
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8532728205102652,
+              "random_mean": 0.4279649846075826,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 2,
+              "point": 0.34845390738586657,
+              "boot_mean": 0.34811994832754134,
+              "ci95": [
+                0.3444630431632201,
+                0.35180994073549904
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7763962058230327,
+              "random_mean": 0.42794229843716614,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 3,
+              "point": 0.3095231504394217,
+              "boot_mean": 0.30922097367544965,
+              "ci95": [
+                0.3057653938730558,
+                0.31263549874226254
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7400274949939408,
+              "random_mean": 0.43050434455451914,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 4,
+              "point": 0.28749197221330647,
+              "boot_mean": 0.2872119893332323,
+              "ci95": [
+                0.2840263379116853,
+                0.29042306716243427
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.720516012271629,
+              "random_mean": 0.4330240400583225,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 5,
+              "point": 0.2841804212755806,
+              "boot_mean": 0.28390276086827115,
+              "ci95": [
+                0.2807709135115146,
+                0.2871080219745636
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7139398250497058,
+              "random_mean": 0.4297594037741252,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 6,
+              "point": 0.28527514990371766,
+              "boot_mean": 0.2849975794901451,
+              "ci95": [
+                0.28179299185673395,
+                0.2882835015654564
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7119779720150858,
+              "random_mean": 0.4267028221113682,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 7,
+              "point": 0.28539746061929533,
+              "boot_mean": 0.2851070245703062,
+              "ci95": [
+                0.2817532730599244,
+                0.28853138213356333
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7155082017161343,
+              "random_mean": 0.43011074109683894,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 8,
+              "point": 0.3017723733512749,
+              "boot_mean": 0.3014641494601965,
+              "ci95": [
+                0.29806787371635435,
+                0.3050668517748515
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7319336090485791,
+              "random_mean": 0.4301612356973042,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 9,
+              "point": 0.3151564646435158,
+              "boot_mean": 0.3148509607861439,
+              "ci95": [
+                0.3111010794838269,
+                0.31867973804473876
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7441259795024734,
+              "random_mean": 0.42896951485895757,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 10,
+              "point": 0.3380264750916088,
+              "boot_mean": 0.337696783910195,
+              "ci95": [
+                0.333838510264953,
+                0.3415106862783432
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7741961360745294,
+              "random_mean": 0.4361696609829206,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 11,
+              "point": 0.38705233136709477,
+              "boot_mean": 0.38670813804368176,
+              "ci95": [
+                0.3832309385140737,
+                0.39011571581164994
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8255859727145766,
+              "random_mean": 0.4385336413474818,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 12,
+              "point": 0.39756689949970075,
+              "boot_mean": 0.39722320391237737,
+              "ci95": [
+                0.39373586351672807,
+                0.4005860462784767
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8319848235321469,
+              "random_mean": 0.4344179240324461,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            }
+          ],
+          "embedding": {
+            "point": 0.5232472105602491,
+            "boot_mean": 0.522844198147456,
+            "ci95": [
+              0.5196486120422681,
+              0.5261520989239216
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "final": {
+            "point": 0.39756689949970075,
+            "boot_mean": 0.39722320391237737,
+            "ci95": [
+              0.39373586351672807,
+              0.4005860462784767
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough": {
+            "layer": 5,
+            "point": 0.2841804212755806,
+            "boot_mean": 0.28390276086827115,
+            "ci95": [
+              0.2807709135115146,
+              0.2871080219745636
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough_refit": {
+            "point": 0.2838954208145539,
+            "boot_mean": 0.2838954208145539,
+            "ci95": [
+              0.2807709135115146,
+              0.28710555185874304
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          }
+        },
+        "serbian": {
+          "per_layer": [
+            {
+              "layer": 0,
+              "point": 0.6121855688872897,
+              "boot_mean": 0.6115137556344271,
+              "ci95": [
+                0.608277029544115,
+                0.6147572661439576
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.9052876137361043,
+              "random_mean": 0.2931020448488147,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 1,
+              "point": 0.4382129644545883,
+              "boot_mean": 0.4376388035515944,
+              "ci95": [
+                0.43399437939127283,
+                0.4409361499051253
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.7282226289958246,
+              "random_mean": 0.2900096645412363,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 2,
+              "point": 0.3070932037616382,
+              "boot_mean": 0.3066327582846085,
+              "ci95": [
+                0.3028384248415629,
+                0.31002230023344357
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.5959000391846713,
+              "random_mean": 0.2888068354230331,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 3,
+              "point": 0.20011476108144338,
+              "boot_mean": 0.19976812805235386,
+              "ci95": [
+                0.19574599961439768,
+                0.20349600513776142
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.48176280454429915,
+              "random_mean": 0.28164804346285577,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 4,
+              "point": 0.14327118315084386,
+              "boot_mean": 0.14301619830727577,
+              "ci95": [
+                0.13885653838515283,
+                0.1469237523774306
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.4241268820778029,
+              "random_mean": 0.28085569892695905,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 5,
+              "point": 0.10539080560095876,
+              "boot_mean": 0.1052043584138155,
+              "ci95": [
+                0.1008243538439274,
+                0.10924957195917767
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3848001070653188,
+              "random_mean": 0.27940930146436005,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 6,
+              "point": 0.18230187972144396,
+              "boot_mean": 0.18201400735974313,
+              "ci95": [
+                0.17736665333310764,
+                0.18639771764477092
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.46378847888851454,
+              "random_mean": 0.2814865991670706,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 7,
+              "point": 0.18382878247127898,
+              "boot_mean": 0.1835602133671443,
+              "ci95": [
+                0.17899106914798418,
+                0.1881303456922372
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.46604288475787836,
+              "random_mean": 0.2822141022865994,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 8,
+              "point": 0.20025976737296908,
+              "boot_mean": 0.1999456433306138,
+              "ci95": [
+                0.19531899268428482,
+                0.20469145476818082
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.4771434058358892,
+              "random_mean": 0.27688363846292013,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 9,
+              "point": 0.2080321046695927,
+              "boot_mean": 0.2076488153785467,
+              "ci95": [
+                0.20301760981480282,
+                0.21241844420631725
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.48459532884745804,
+              "random_mean": 0.27656322417786533,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 10,
+              "point": 0.3291237389264717,
+              "boot_mean": 0.3285909249782562,
+              "ci95": [
+                0.3242197538415591,
+                0.3330658527712027
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.6063812741982287,
+              "random_mean": 0.27725753527175706,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 11,
+              "point": 0.41231709789598775,
+              "boot_mean": 0.4117319913605849,
+              "ci95": [
+                0.40718809589743615,
+                0.41642287323872246
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.6885114341068679,
+              "random_mean": 0.27619433621088013,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 12,
+              "point": 0.5386007516275424,
+              "boot_mean": 0.537939106747508,
+              "ci95": [
+                0.5338519883652527,
+                0.541905476897955
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.8137988969975068,
+              "random_mean": 0.2751981453699644,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            }
+          ],
+          "embedding": {
+            "point": 0.6121855688872897,
+            "boot_mean": 0.6115137556344271,
+            "ci95": [
+              0.608277029544115,
+              0.6147572661439576
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "final": {
+            "point": 0.5386007516275424,
+            "boot_mean": 0.537939106747508,
+            "ci95": [
+              0.5338519883652527,
+              0.541905476897955
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough": {
+            "layer": 5,
+            "point": 0.10539080560095876,
+            "boot_mean": 0.1052043584138155,
+            "ci95": [
+              0.1008243538439274,
+              0.10924957195917767
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough_refit": {
+            "point": 0.1052043584138155,
+            "boot_mean": 0.1052043584138155,
+            "ci95": [
+              0.1008243538439274,
+              0.10924957195917767
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          }
+        },
+        "no_script": {
+          "per_layer": [
+            {
+              "layer": 0,
+              "point": 0.009700300293715824,
+              "boot_mean": 0.009670475363731385,
+              "ci95": [
+                0.007122764488061287,
+                0.012308046470085762
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3742948085770495,
+              "random_mean": 0.3645945082833337,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 1,
+              "point": 0.011914894378820373,
+              "boot_mean": 0.011923158203562101,
+              "ci95": [
+                0.007539396484692909,
+                0.016444335629542648
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.36968583811844896,
+              "random_mean": 0.3577709437396286,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 2,
+              "point": -0.009094993286685005,
+              "boot_mean": -0.009045698508620262,
+              "ci95": [
+                -0.014177232980728132,
+                -0.003643617282311141
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.34381725305059385,
+              "random_mean": 0.35291224633727886,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 3,
+              "point": -0.006073333387374091,
+              "boot_mean": -0.006039821018775304,
+              "ci95": [
+                -0.010305710136890411,
+                -0.0014886279900868733
+              ],
+              "p_boot": 0.009,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.34886971399037825,
+              "random_mean": 0.35494304737775234,
+              "q_bh": 0.00936,
+              "significant_bh": true
+            },
+            {
+              "layer": 4,
+              "point": 0.00016548894295065342,
+              "boot_mean": 0.0001955150614182154,
+              "ci95": [
+                -0.004495847225189191,
+                0.004884780695041019
+              ],
+              "p_boot": 0.939,
+              "excludes_zero": false,
+              "n_draws": 2000,
+              "trained": 0.35298044279368035,
+              "random_mean": 0.3528149538507297,
+              "q_bh": 0.939,
+              "significant_bh": false
+            },
+            {
+              "layer": 5,
+              "point": 0.019210062543953133,
+              "boot_mean": 0.019152772133549052,
+              "ci95": [
+                0.013073083013296127,
+                0.025297901282707848
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3704146883357585,
+              "random_mean": 0.3512046257918054,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 6,
+              "point": 0.007914721937541336,
+              "boot_mean": 0.007871134102344513,
+              "ci95": [
+                0.0013964956005414503,
+                0.014413839081923145
+              ],
+              "p_boot": 0.019,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3605728218448191,
+              "random_mean": 0.35265809990727776,
+              "q_bh": 0.019372549019607842,
+              "significant_bh": true
+            },
+            {
+              "layer": 7,
+              "point": 0.012627815121409702,
+              "boot_mean": 0.0125555137048165,
+              "ci95": [
+                0.005657076090574265,
+                0.020071788132190703
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3629320297505983,
+              "random_mean": 0.3503042146291886,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 8,
+              "point": 0.046586703951031094,
+              "boot_mean": 0.046386248543858526,
+              "ci95": [
+                0.03724192256728806,
+                0.05601178954044976
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.39524649611586915,
+              "random_mean": 0.34865979216483806,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 9,
+              "point": 0.04288527422904109,
+              "boot_mean": 0.04271317895253499,
+              "ci95": [
+                0.03433371856808664,
+                0.05147539426883061
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.3848571103146143,
+              "random_mean": 0.3419718360855732,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 10,
+              "point": 0.08302736135901356,
+              "boot_mean": 0.0827897449831168,
+              "ci95": [
+                0.07492178231477739,
+                0.09142972206075987
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.4229106430023784,
+              "random_mean": 0.33988328164336484,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 11,
+              "point": 0.11439353913580852,
+              "boot_mean": 0.11417455073694387,
+              "ci95": [
+                0.1063784323632717,
+                0.12224198157588641
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.45551041992328806,
+              "random_mean": 0.34111688078747954,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            },
+            {
+              "layer": 12,
+              "point": 0.1064816476972506,
+              "boot_mean": 0.10630803931752841,
+              "ci95": [
+                0.09987743347883227,
+                0.11276251773039497
+              ],
+              "p_boot": 0.001,
+              "excludes_zero": true,
+              "n_draws": 2000,
+              "trained": 0.44598391820226013,
+              "random_mean": 0.33950227050500953,
+              "q_bh": 0.0010612244897959184,
+              "significant_bh": true
+            }
+          ],
+          "embedding": {
+            "point": 0.009700300293715824,
+            "boot_mean": 0.009670475363731385,
+            "ci95": [
+              0.007122764488061287,
+              0.012308046470085762
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "final": {
+            "point": 0.1064816476972506,
+            "boot_mean": 0.10630803931752841,
+            "ci95": [
+              0.09987743347883227,
+              0.11276251773039497
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough": {
+            "layer": 2,
+            "point": -0.009094993286685005,
+            "boot_mean": -0.009045698508620262,
+            "ci95": [
+              -0.014177232980728132,
+              -0.003643617282311141
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          },
+          "trough_refit": {
+            "point": -0.00904585200548172,
+            "boot_mean": -0.00904585200548172,
+            "ci95": [
+              -0.014177232980728132,
+              -0.003643617282311141
+            ],
+            "p_boot": 0.001,
+            "excludes_zero": true,
+            "n_draws": 2000
+          }
+        }
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 4,
+        "serbian_layer": 5,
+        "point": 0.21754762625286916,
+        "boot_mean": 0.2174400373349587,
+        "ci95": [
+          0.21233034854133923,
+          0.22233445098002752
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form_ratio": {
+        "layer_mean": {
+          "point": 0.8952177576271886,
+          "boot_mean": 0.8952177576271886,
+          "ci95": [
+            0.8909040705231787,
+            0.8991251242744132
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        "embedding": {
+          "point": 0.9742374120632494,
+          "boot_mean": 0.9742374120632494,
+          "ci95": [
+            0.9724114292829382,
+            0.9760341885710129
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        "final": {
+          "point": 0.8971717085886524,
+          "boot_mean": 0.8971717085886524,
+          "ci95": [
+            0.8929704014296556,
+            0.9015344043723365
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        }
+      },
+      "draws_file": "bootstrap_draws_flores_xlm-roberta-base.npz",
+      "script_form_ratio_per_layer": [
+        {
+          "layer": 0,
+          "point": 0.9742374120632494,
+          "boot_mean": 0.9742374120632494,
+          "ci95": [
+            0.9724114292829382,
+            0.9760341885710129
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 1,
+          "point": 0.9776143753312772,
+          "boot_mean": 0.9776143753312772,
+          "ci95": [
+            0.9748289777862258,
+            0.9802407326443492
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 2,
+          "point": 0.9519706740893625,
+          "boot_mean": 0.9519706740893625,
+          "ci95": [
+            0.9482520991207467,
+            0.9554490287184418
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 3,
+          "point": 0.9291321802702782,
+          "boot_mean": 0.9291321802702782,
+          "ci95": [
+            0.9248375095772706,
+            0.933350624320859
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 4,
+          "point": 0.8901810154103951,
+          "boot_mean": 0.8901810154103951,
+          "ci95": [
+            0.8852905681338195,
+            0.8948830602760852
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 5,
+          "point": 0.8679068725148839,
+          "boot_mean": 0.8679068725148839,
+          "ci95": [
+            0.8625700689627325,
+            0.8730811205890069
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 6,
+          "point": 0.86015319679718,
+          "boot_mean": 0.86015319679718,
+          "ci95": [
+            0.8544909847925521,
+            0.8654703210697234
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 7,
+          "point": 0.8494015786847633,
+          "boot_mean": 0.8494015786847633,
+          "ci95": [
+            0.843369665874377,
+            0.8551801849426149
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 8,
+          "point": 0.8485501166474904,
+          "boot_mean": 0.8485501166474904,
+          "ci95": [
+            0.8426008563552424,
+            0.8543181888556637
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 9,
+          "point": 0.8323352930243707,
+          "boot_mean": 0.8323352930243707,
+          "ci95": [
+            0.8259323731517801,
+            0.8385004396918972
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 10,
+          "point": 0.848222024724972,
+          "boot_mean": 0.848222024724972,
+          "ci95": [
+            0.8420770028225735,
+            0.8542030878796426
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 11,
+          "point": 0.910954401006577,
+          "boot_mean": 0.910954401006577,
+          "ci95": [
+            0.9062520369285014,
+            0.9156549881247816
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        },
+        {
+          "layer": 12,
+          "point": 0.8971717085886524,
+          "boot_mean": 0.8971717085886524,
+          "ci95": [
+            0.8929704014296556,
+            0.9015344043723365
+          ],
+          "p_boot": 0.001,
+          "excludes_zero": true,
+          "n_draws": 2000
+        }
+      ],
+      "script_form_ratio_full_sample": {
+        "per_layer": [
+          0.9742310109392405,
+          0.9776191970364237,
+          0.9519909139943212,
+          0.9291714973543446,
+          0.8902377167157186,
+          0.8679497543440335,
+          0.8601995409458362,
+          0.8494723078497407,
+          0.8486436179592444,
+          0.832424022143152,
+          0.8483187114461084,
+          0.9110235863037759,
+          0.8972200058567033
+        ],
+        "layer_mean": 0.8952693756068186,
+        "min": 0.832424022143152,
+        "max": 0.9776191970364237,
+        "n_layers_above_one": 0
+      }
+    }
+  },
+  "across_models": {},
+  "refreshed_by": "tools_bootstrap_refresh.py",
+  "p_floor": "2/n_draws"
+}

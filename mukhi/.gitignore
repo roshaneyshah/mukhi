@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+hf_cache/
+# PuMVR has no licence file: fetched at a pinned commit, never redistributed
+data/pumvr/
+# per-model results ARE committed: they hold layerwise statistics only,
+# no source text. Condition files and the audit sheet do hold FLORES text.
+results/conditions_*.json
+results/audit_sheet.csv

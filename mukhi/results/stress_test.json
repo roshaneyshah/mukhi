@@ -1,0 +1,389 @@
+{
+  "n": 600,
+  "d": 64,
+  "baseline": {
+    "consistency": 0.2843438583818683,
+    "shared": 0.12109130933294153,
+    "rms": 0.42586222899992526
+  },
+  "halving_effect": {
+    "consistency": 0.13004764929546198,
+    "shared": 0.05720882439312612,
+    "rms": 0.011837248619227636
+  },
+  "sweeps": [
+    {
+      "name": "norm mismatch between scripts",
+      "param": "scale_b",
+      "rows": [
+        {
+          "value": 0.25,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 1,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 2,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 4,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        }
+      ],
+      "consistency_range": 0.0,
+      "consistency_vs_halving": 0.0,
+      "shared_range": 0.0,
+      "shared_vs_halving": 0.0,
+      "rms_range": 0.0,
+      "rms_vs_halving": 0.0
+    },
+    {
+      "name": "per-sentence scale",
+      "param": "item_scale",
+      "rows": [
+        {
+          "value": 0.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.25,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.2843438583818684,
+          "shared": 0.12109130933294156,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 1.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        }
+      ],
+      "consistency_range": 5.551115123125783e-17,
+      "consistency_vs_halving": 4.2685240011635406e-16,
+      "shared_range": 2.7755575615628914e-17,
+      "shared_vs_halving": 4.851624886555764e-16,
+      "rms_range": 0.0,
+      "rms_vs_halving": 0.0
+    },
+    {
+      "name": "content variance growth",
+      "param": "content_sd",
+      "rows": [
+        {
+          "value": 0.5,
+          "consistency": 0.28267144753563067,
+          "shared": 0.2135813150702091,
+          "rms": 0.7555814955215356
+        },
+        {
+          "value": 1,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 2,
+          "consistency": 0.28501975089601167,
+          "shared": 0.06283907303925984,
+          "rms": 0.22047269651213197
+        },
+        {
+          "value": 4,
+          "consistency": 0.2852623151169701,
+          "shared": 0.03172931288214291,
+          "rms": 0.11122854720271234
+        },
+        {
+          "value": 8,
+          "consistency": 0.285353687258539,
+          "shared": 0.01590462967721657,
+          "rms": 0.055736548667081005
+        }
+      ],
+      "consistency_range": 0.0026822397229083195,
+      "consistency_vs_halving": 0.02062505348954367,
+      "shared_range": 0.19767668539299255,
+      "shared_vs_halving": 3.4553530419468683,
+      "rms_range": 0.6998449468544546,
+      "rms_vs_halving": 59.12226475649698
+    },
+    {
+      "name": "anisotropy (eigenvalue spread)",
+      "param": "cond",
+      "rows": [
+        {
+          "value": 1,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 10,
+          "consistency": 0.2875628953387991,
+          "shared": 0.12278221828405682,
+          "rms": 0.42697517751515895
+        },
+        {
+          "value": 100,
+          "consistency": 0.2882669586151788,
+          "shared": 0.12421546662353002,
+          "rms": 0.4309042812962519
+        },
+        {
+          "value": 1000,
+          "consistency": 0.2878446945566698,
+          "shared": 0.12555235075630117,
+          "rms": 0.4361808750710981
+        }
+      ],
+      "consistency_range": 0.003923100233310495,
+      "consistency_vs_halving": 0.030166637033149292,
+      "shared_range": 0.004461041423359638,
+      "shared_vs_halving": 0.0779782047731722,
+      "rms_range": 0.010318646071172832,
+      "rms_vs_halving": 0.8717098375725515
+    },
+    {
+      "name": "script aligned with dominant content",
+      "param": "align",
+      "rows": [
+        {
+          "value": 0.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.25,
+          "consistency": 0.2867801378510742,
+          "shared": 0.12222710467068673,
+          "rms": 0.4262049163745072
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.2875400716762701,
+          "shared": 0.1225835435168582,
+          "rms": 0.42631812255674095
+        },
+        {
+          "value": 0.75,
+          "consistency": 0.2879222312410159,
+          "shared": 0.12276467866346587,
+          "rms": 0.42638138129980374
+        },
+        {
+          "value": 1.0,
+          "consistency": 0.28748362378522596,
+          "shared": 0.12256712451206979,
+          "rms": 0.426344717999094
+        }
+      ],
+      "consistency_range": 0.0035783728591475827,
+      "consistency_vs_halving": 0.027515859598643666,
+      "shared_range": 0.001673369330524338,
+      "shared_vs_halving": 0.029250196071594164,
+      "rms_range": 0.0005191522998784781,
+      "rms_vs_halving": 0.043857514239854845
+    },
+    {
+      "name": "interaction: script size grows with content",
+      "param": "gain",
+      "rows": [
+        {
+          "value": 0.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.37847269236280395,
+          "shared": 0.1671337934900394,
+          "rms": 0.4416006672677587
+        },
+        {
+          "value": 1.0,
+          "consistency": 0.4567936947725869,
+          "shared": 0.2113902730009659,
+          "rms": 0.46276968228776844
+        },
+        {
+          "value": 2.0,
+          "consistency": 0.568420412195677,
+          "shared": 0.2921865335936727,
+          "rms": 0.5140324438121838
+        }
+      ],
+      "consistency_range": 0.28407655381380864,
+      "consistency_vs_halving": 2.184403604008254,
+      "shared_range": 0.17109522426073115,
+      "shared_vs_halving": 2.9907138640885784,
+      "rms_range": 0.08817021481225856,
+      "rms_vs_halving": 7.448539576083648
+    },
+    {
+      "name": "interaction: second script compresses content",
+      "param": "compress",
+      "rows": [
+        {
+          "value": 0.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.1,
+          "consistency": 0.29604427804452055,
+          "shared": 0.13298888527329816,
+          "rms": 0.4492195767191915
+        },
+        {
+          "value": 0.25,
+          "consistency": 0.3133082866335122,
+          "shared": 0.15558670446866807,
+          "rms": 0.49659300792980093
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.3369233810088967,
+          "shared": 0.21317289823337301,
+          "rms": 0.6327043780548552
+        }
+      ],
+      "consistency_range": 0.05257952262702836,
+      "consistency_vs_halving": 0.40430967350720987,
+      "shared_range": 0.09208158890043149,
+      "shared_vs_halving": 1.6095696752596698,
+      "rms_range": 0.20684214905492998,
+      "rms_vs_halving": 17.47383667509943
+    },
+    {
+      "name": "interaction: script direction tilts to content",
+      "param": "tilt",
+      "rows": [
+        {
+          "value": 0.0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 0.25,
+          "consistency": 0.27389549295398813,
+          "shared": 0.11472894190417261,
+          "rms": 0.4188785316136837
+        },
+        {
+          "value": 0.5,
+          "consistency": 0.2527389722804178,
+          "shared": 0.10412256617288682,
+          "rms": 0.41197669371449847
+        },
+        {
+          "value": 1.0,
+          "consistency": 0.2024653981089946,
+          "shared": 0.08136640595114193,
+          "rms": 0.4018780824333222
+        }
+      ],
+      "consistency_range": 0.08187846027287371,
+      "consistency_vs_halving": 0.6296035392908165,
+      "shared_range": 0.0397249033817996,
+      "shared_vs_halving": 0.6943841934037839,
+      "rms_range": 0.023984146566603082,
+      "rms_vs_halving": 2.026158893684537
+    },
+    {
+      "name": "depth: variance growth and rotation together",
+      "param": "layer",
+      "rows": [
+        {
+          "value": 0,
+          "consistency": 0.2843438583818683,
+          "shared": 0.12109130933294153,
+          "rms": 0.42586222899992526
+        },
+        {
+          "value": 1,
+          "consistency": 0.2864533894597396,
+          "shared": 0.09588476512662525,
+          "rms": 0.33473077524921957
+        },
+        {
+          "value": 2,
+          "consistency": 0.28728240517886894,
+          "shared": 0.07501154388382651,
+          "rms": 0.2611073373502374
+        },
+        {
+          "value": 3,
+          "consistency": 0.2878271439734396,
+          "shared": 0.05835639345898284,
+          "rms": 0.20274805445162566
+        },
+        {
+          "value": 4,
+          "consistency": 0.2882034880634015,
+          "shared": 0.045246162355585956,
+          "rms": 0.15699380552129996
+        },
+        {
+          "value": 5,
+          "consistency": 0.28845887711431545,
+          "shared": 0.03500732536665106,
+          "rms": 0.12135984760412749
+        },
+        {
+          "value": 6,
+          "consistency": 0.2886094504712024,
+          "shared": 0.02704798786593166,
+          "rms": 0.0937183027852046
+        },
+        {
+          "value": 7,
+          "consistency": 0.28863597122351337,
+          "shared": 0.020876218158600038,
+          "rms": 0.07232715336936972
+        },
+        {
+          "value": 8,
+          "consistency": 0.2881482544666798,
+          "shared": 0.01607562941788721,
+          "rms": 0.055789438834675034
+        }
+      ],
+      "consistency_range": 0.004292112841645046,
+      "consistency_vs_halving": 0.033004155514518935,
+      "shared_range": 0.10501567991505432,
+      "shared_vs_halving": 1.8356552687293535,
+      "rms_range": 0.37007279016525024,
+      "rms_vs_halving": 31.263412814032538
+    }
+  ],
+  "reading": "x_vs_halving is the nuisance-induced range divided by the change caused by halving the real script signal. Below 0.1 the statistic is stable under that nuisance; above 1 the nuisance moves it more than the signal does."
+}

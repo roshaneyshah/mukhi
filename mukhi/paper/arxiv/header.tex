@@ -1,0 +1,5 @@
+\usepackage{fontspec}
+\directlua{luaotfload.add_fallback("scriptfb",{"Noto Sans Gurmukhi:mode=harf;script=guru;","Noto Naskh Arabic:mode=harf;script=arab;"})}
+\setmainfont{Noto Serif}[RawFeature={fallback=scriptfb}]
+\usepackage{microtype}
+\usepackage{longtable,booktabs}

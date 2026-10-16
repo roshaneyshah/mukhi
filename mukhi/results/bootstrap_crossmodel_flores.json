@@ -1,0 +1,1102 @@
+{
+  "data": "flores",
+  "source_files": {
+    "muril-base-cased": "bootstrap_draws_flores_muril-base-cased.npz",
+    "xlm-roberta-base": "bootstrap_draws_flores_xlm-roberta-base.npz",
+    "xlm-roberta-large": "bootstrap_draws_flores_xlm-roberta-large.npz"
+  },
+  "per_model": {
+    "muril-base-cased": {
+      "punjabi": {
+        "trough_layer": 1,
+        "point": 0.26550411026473564,
+        "boot_mean": 0.2652153234680493,
+        "ci95": [
+          0.2628628889719645,
+          0.2675841341416041
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 7,
+        "point": 0.23614093030213318,
+        "boot_mean": 0.23589264982442062,
+        "ci95": [
+          0.2319443464279175,
+          0.23973793412248295
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form_rt": {
+        "trough_layer": 8,
+        "point": 0.1397898160598196,
+        "boot_mean": 0.13961333233118056,
+        "ci95": [
+          0.13486060947179795,
+          0.1441693072517713
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 4,
+        "point": 0.18229445972614355,
+        "boot_mean": 0.18218082012732825,
+        "ci95": [
+          0.17966452687978746,
+          0.18467705845832824
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 9,
+        "point": -0.04843070519669285,
+        "boot_mean": -0.04840548319617908,
+        "ci95": [
+          -0.05436410655577977,
+          -0.04224019919832548
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi": {
+        "trough_layer": 12,
+        "point": 0.04566578075378791,
+        "boot_mean": 0.04556954994549353,
+        "ci95": [
+          0.04473572596907615,
+          0.04636750482022762
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi": {
+        "trough_layer": 12,
+        "point": -0.06800987927786956,
+        "boot_mean": -0.06802683997154235,
+        "ci95": [
+          -0.06941813006997108,
+          -0.06659744642674922
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__punjabi": {
+        "trough_layer": 1,
+        "point": 1.6301118703372177,
+        "boot_mean": 1.6288359439748021,
+        "ci95": [
+          1.618952557315763,
+          1.6390004907889522
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form": {
+        "trough_layer": 12,
+        "point": 0.04424824027642418,
+        "boot_mean": 0.04415356339762608,
+        "ci95": [
+          0.04345016479492187,
+          0.044863718251387276
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form": {
+        "trough_layer": 12,
+        "point": -0.06292105332548412,
+        "boot_mean": -0.06294254051645597,
+        "ci95": [
+          -0.06425525409479936,
+          -0.061645276099443445
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form": {
+        "trough_layer": 7,
+        "point": 1.5634919308283062,
+        "boot_mean": 1.5623886046758821,
+        "ci95": [
+          1.5496372105036182,
+          1.5746749538285831
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form_rt": {
+        "trough_layer": 12,
+        "point": 0.03744099263436114,
+        "boot_mean": 0.03734917940075198,
+        "ci95": [
+          0.036609678094585735,
+          0.03807004404564699
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form_rt": {
+        "trough_layer": 12,
+        "point": -0.06272438727012442,
+        "boot_mean": -0.06275144641349714,
+        "ci95": [
+          -0.06400428563356399,
+          -0.06150629905362924
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form_rt": {
+        "trough_layer": 8,
+        "point": 1.3141311597654715,
+        "boot_mean": 1.3134782104229938,
+        "ci95": [
+          1.3012158846280213,
+          1.325499051832453
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__serbian": {
+        "trough_layer": 12,
+        "point": -0.00037077456333767245,
+        "boot_mean": -0.00040668049951394396,
+        "ci95": [
+          -0.0011464528739452452,
+          0.00031742540498575444
+        ],
+        "p_boot": 0.28,
+        "excludes_zero": false,
+        "n_draws": 2000
+      },
+      "rms__serbian": {
+        "trough_layer": 12,
+        "point": -0.06780702962857554,
+        "boot_mean": -0.06780001212656497,
+        "ci95": [
+          -0.0692842271178961,
+          -0.0663584815959136
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__serbian": {
+        "trough_layer": 4,
+        "point": 1.2595203026520003,
+        "boot_mean": 1.2592976893788752,
+        "ci95": [
+          1.2544781575915676,
+          1.2641687008683882
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__no_script": {
+        "trough_layer": 12,
+        "point": -0.032524393328167193,
+        "boot_mean": -0.032607762237079445,
+        "ci95": [
+          -0.033480032347142696,
+          -0.03168949719207982
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__no_script": {
+        "trough_layer": 12,
+        "point": -0.10013164405379305,
+        "boot_mean": -0.10013848572348556,
+        "ci95": [
+          -0.10113750587527949,
+          -0.09917698179682097
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__no_script": {
+        "trough_layer": 9,
+        "point": 0.8646299061698323,
+        "boot_mean": 0.8649630437723681,
+        "ci95": [
+          0.8489426739693475,
+          0.8817155761445017
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 1,
+        "serbian_layer": 4,
+        "point": 0.08320965053859208,
+        "boot_mean": 0.08303450334072113,
+        "ci95": [
+          0.07968619068463642,
+          0.08661455685893689
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 12,
+        "serbian_layer": 12,
+        "point": 0.04603655531712558,
+        "boot_mean": 0.04597623044500748,
+        "ci95": [
+          0.04488697983324527,
+          0.04706435836851596
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 12,
+        "serbian_layer": 12,
+        "point": -0.0002028496492940124,
+        "boot_mean": -0.00022682784497737868,
+        "ci95": [
+          -0.001681545749306687,
+          0.0012202841540177836
+        ],
+        "p_boot": 0.764,
+        "excludes_zero": false,
+        "n_draws": 2000
+      },
+      "ratio__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 1,
+        "serbian_layer": 4,
+        "point": 0.3705915676852174,
+        "boot_mean": 0.36953825459592676,
+        "ci95": [
+          0.359124223898429,
+          0.38009556612658385
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    },
+    "xlm-roberta-base": {
+      "punjabi": {
+        "trough_layer": 4,
+        "point": 0.3229384318538279,
+        "boot_mean": 0.3226443957487742,
+        "ci95": [
+          0.3195736269156138,
+          0.32571213841438296
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 5,
+        "point": 0.2841804212755806,
+        "boot_mean": 0.28390276086827115,
+        "ci95": [
+          0.2807709135115146,
+          0.2871080219745636
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form_rt": {
+        "trough_layer": 7,
+        "point": 0.24706207687679588,
+        "boot_mean": 0.2467819557239612,
+        "ci95": [
+          0.24345765387018523,
+          0.250267776598533
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 5,
+        "point": 0.10539080560095876,
+        "boot_mean": 0.1052043584138155,
+        "ci95": [
+          0.1008243538439274,
+          0.10924957195917767
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 2,
+        "point": -0.009094993286685005,
+        "boot_mean": -0.009045698508620262,
+        "ci95": [
+          -0.014177232980728132,
+          -0.003643617282311141
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi": {
+        "trough_layer": 12,
+        "point": -0.001229959498519978,
+        "boot_mean": -0.0013251504028836884,
+        "ci95": [
+          -0.0022194317852457317,
+          -0.00042100250720978255
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi": {
+        "trough_layer": 12,
+        "point": -0.11885117923612742,
+        "boot_mean": -0.11886796589195728,
+        "ci95": [
+          -0.12043045486013096,
+          -0.11740335226058961
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__punjabi": {
+        "trough_layer": 4,
+        "point": 1.7830401882086322,
+        "boot_mean": 1.78153356395882,
+        "ci95": [
+          1.7692390528323994,
+          1.7941431323518906
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form": {
+        "trough_layer": 12,
+        "point": -0.017268409402056067,
+        "boot_mean": -0.017362033052990833,
+        "ci95": [
+          -0.018253469467163087,
+          -0.016467129563291865
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form": {
+        "trough_layer": 12,
+        "point": -0.12830009242887222,
+        "boot_mean": -0.12831824388727545,
+        "ci95": [
+          -0.12977247349917886,
+          -0.12694839785496392
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form": {
+        "trough_layer": 5,
+        "point": 1.661254689903054,
+        "boot_mean": 1.6599913686179115,
+        "ci95": [
+          1.6486847200490788,
+          1.6715619109821744
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form_rt": {
+        "trough_layer": 12,
+        "point": -0.025582536823427413,
+        "boot_mean": -0.025677850488573312,
+        "ci95": [
+          -0.026467219429711506,
+          -0.024896247064073878
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form_rt": {
+        "trough_layer": 12,
+        "point": -0.1324841289029262,
+        "boot_mean": -0.13250364537288747,
+        "ci95": [
+          -0.13391357008367777,
+          -0.1312027025346955
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form_rt": {
+        "trough_layer": 7,
+        "point": 1.5502862986097838,
+        "boot_mean": 1.5491969848938756,
+        "ci95": [
+          1.5387461697610945,
+          1.5607856056835554
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__serbian": {
+        "trough_layer": 5,
+        "point": -0.020932967378627793,
+        "boot_mean": -0.021055085583279527,
+        "ci95": [
+          -0.02202228931710124,
+          -0.020128253536919757
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__serbian": {
+        "trough_layer": 12,
+        "point": -0.17820275706104544,
+        "boot_mean": -0.1782113770544529,
+        "ci95": [
+          -0.17961262874305248,
+          -0.1768611178112527
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__serbian": {
+        "trough_layer": 5,
+        "point": 1.3771914716103388,
+        "boot_mean": 1.3755691579629887,
+        "ci95": [
+          1.3565517487330419,
+          1.3937420339238025
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__no_script": {
+        "trough_layer": 12,
+        "point": -0.03484784317898791,
+        "boot_mean": -0.0349230294522519,
+        "ci95": [
+          -0.035745182524745664,
+          -0.034066595463082196
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__no_script": {
+        "trough_layer": 12,
+        "point": -0.12073010263611378,
+        "boot_mean": -0.12072906858411928,
+        "ci95": [
+          -0.12182952044531704,
+          -0.11958518313864866
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__no_script": {
+        "trough_layer": 2,
+        "point": 0.9742287399174215,
+        "boot_mean": 0.9744267326129582,
+        "ci95": [
+          0.95995642965758,
+          0.9896929457166621
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 4,
+        "serbian_layer": 5,
+        "point": 0.21754762625286916,
+        "boot_mean": 0.2174400373349587,
+        "ci95": [
+          0.21233034854133923,
+          0.22233445098002752
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 12,
+        "serbian_layer": 5,
+        "point": 0.019703007880107815,
+        "boot_mean": 0.01972993518039584,
+        "ci95": [
+          0.018472362713267403,
+          0.020967078457276033
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 12,
+        "serbian_layer": 12,
+        "point": 0.05935157782491801,
+        "boot_mean": 0.05934341116249561,
+        "ci95": [
+          0.05819035610184075,
+          0.060556119680404655
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 4,
+        "serbian_layer": 5,
+        "point": 0.40584871659829336,
+        "boot_mean": 0.40596440599583095,
+        "ci95": [
+          0.3842502219823795,
+          0.42778697463593335
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    },
+    "xlm-roberta-large": {
+      "punjabi": {
+        "trough_layer": 15,
+        "point": 0.34084642261048803,
+        "boot_mean": 0.3404907064090172,
+        "ci95": [
+          0.33690701400240264,
+          0.34407500053445494
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form": {
+        "trough_layer": 15,
+        "point": 0.2578249854918582,
+        "boot_mean": 0.25755304236213367,
+        "ci95": [
+          0.2531512744724751,
+          0.2619061186909676
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "script_form_rt": {
+        "trough_layer": 15,
+        "point": 0.16051791349826444,
+        "boot_mean": 0.16029715730746588,
+        "ci95": [
+          0.15547805155316988,
+          0.16526087323824562
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "serbian": {
+        "trough_layer": 11,
+        "point": 0.032009231419729,
+        "boot_mean": 0.031944956983129186,
+        "ci95": [
+          0.026679212351640048,
+          0.037245417137940724
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "no_script": {
+        "trough_layer": 2,
+        "point": 0.01962318648134137,
+        "boot_mean": 0.019645367125670114,
+        "ci95": [
+          0.014264093091090502,
+          0.02514843419194223
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi": {
+        "trough_layer": 24,
+        "point": 0.0035713421188274252,
+        "boot_mean": 0.0034781321783860526,
+        "ci95": [
+          0.002544356137514119,
+          0.004440896771848201
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi": {
+        "trough_layer": 24,
+        "point": -0.11999445360187203,
+        "boot_mean": -0.12000855617349347,
+        "ci95": [
+          -0.1215927497173349,
+          -0.11841562669724226
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__punjabi": {
+        "trough_layer": 15,
+        "point": 1.817974988964525,
+        "boot_mean": 1.8163455115853067,
+        "ci95": [
+          1.8025329902069316,
+          1.8308711136404194
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form": {
+        "trough_layer": 24,
+        "point": -0.009081413605850491,
+        "boot_mean": -0.009159085494776568,
+        "ci95": [
+          -0.010037469491362567,
+          -0.008241601164142288
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form": {
+        "trough_layer": 24,
+        "point": -0.1264824772216352,
+        "boot_mean": -0.12649311334515612,
+        "ci95": [
+          -0.12800772730261087,
+          -0.12497299903382858
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form": {
+        "trough_layer": 15,
+        "point": 1.5996175984959378,
+        "boot_mean": 1.5984772171579948,
+        "ci95": [
+          1.5851316143332632,
+          1.6118874204603404
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__script_form_rt": {
+        "trough_layer": 24,
+        "point": -0.016475445370298908,
+        "boot_mean": -0.01655541314681371,
+        "ci95": [
+          -0.017422074452042583,
+          -0.01563107576221228
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__script_form_rt": {
+        "trough_layer": 24,
+        "point": -0.1293540431326573,
+        "boot_mean": -0.12936407609283923,
+        "ci95": [
+          -0.13082642884304127,
+          -0.12790033084650834
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__script_form_rt": {
+        "trough_layer": 15,
+        "point": 1.3500821653015094,
+        "boot_mean": 1.3493362071581125,
+        "ci95": [
+          1.3373960255089943,
+          1.3620446019286654
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__serbian": {
+        "trough_layer": 11,
+        "point": -0.04336462082218345,
+        "boot_mean": -0.04348922873288393,
+        "ci95": [
+          -0.04448834274274607,
+          -0.042546885274350646
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__serbian": {
+        "trough_layer": 24,
+        "point": -0.1657303452066467,
+        "boot_mean": -0.16574860816448928,
+        "ci95": [
+          -0.16735217608511446,
+          -0.16412906826784213
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__serbian": {
+        "trough_layer": 11,
+        "point": 1.1108350697700078,
+        "boot_mean": 1.1103864466646036,
+        "ci95": [
+          1.0914934606270894,
+          1.1297963509835212
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__no_script": {
+        "trough_layer": 24,
+        "point": -0.022967121085298303,
+        "boot_mean": -0.023063777744770052,
+        "ci95": [
+          -0.024311305861920117,
+          -0.021673255879431967
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__no_script": {
+        "trough_layer": 24,
+        "point": -0.11374507553458849,
+        "boot_mean": -0.11375199706107378,
+        "ci95": [
+          -0.11505656031270822,
+          -0.11242633548875651
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__no_script": {
+        "trough_layer": 2,
+        "point": 1.0555788624180358,
+        "boot_mean": 1.0555756458752035,
+        "ci95": [
+          1.040232082992944,
+          1.0715447057951364
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "punjabi_minus_serbian_trough": {
+        "punjabi_layer": 15,
+        "serbian_layer": 11,
+        "point": 0.30883719119075903,
+        "boot_mean": 0.3085457494258881,
+        "ci95": [
+          0.30279000476002693,
+          0.3147118705014388
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "shared__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 24,
+        "serbian_layer": 11,
+        "point": 0.04693596294101088,
+        "boot_mean": 0.046967360911269976,
+        "ci95": [
+          0.04566775299608707,
+          0.04825306112567583
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "rms__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 24,
+        "serbian_layer": 24,
+        "point": 0.045735891604774676,
+        "boot_mean": 0.0457400519909958,
+        "ci95": [
+          0.04449172926445804,
+          0.04698284069697062
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      },
+      "ratio__punjabi_minus_serbian_trough": {
+        "punjabi_layer": 15,
+        "serbian_layer": 11,
+        "point": 0.7071399191945171,
+        "boot_mean": 0.705959064920703,
+        "ci95": [
+          0.6843281072716708,
+          0.7292685982856957
+        ],
+        "p_boot": 0.001,
+        "excludes_zero": true,
+        "n_draws": 2000
+      }
+    }
+  },
+  "across_models": {
+    "punjabi_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 4,
+      "xlm-roberta-large_layer": 15,
+      "point": 0.017907990756660108,
+      "boot_mean": 0.017846310660243035,
+      "ci95": [
+        0.01431368440389635,
+        0.02140951429804166
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "serbian_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 11,
+      "point": -0.07338157418122976,
+      "boot_mean": -0.07325940143068631,
+      "ci95": [
+        -0.0782507327695688,
+        -0.06828709344069164
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "script_form_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.026355435783722347,
+      "boot_mean": -0.02634971850613753,
+      "ci95": [
+        -0.030164917806784278,
+        -0.0223514599104722
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "script_form_rt_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 7,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.08654416337853144,
+      "boot_mean": -0.08648479841649533,
+      "ci95": [
+        -0.09086966266234718,
+        -0.08220968147118889
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "shared__punjabi_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.004801301617347403,
+      "boot_mean": 0.004803282581269741,
+      "ci95": [
+        0.003909421898424625,
+        0.0057695049792528125
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "shared__serbian_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 11,
+      "point": -0.02243165344355566,
+      "boot_mean": -0.022434143149604402,
+      "ci95": [
+        -0.02320790110776822,
+        -0.021719198394566774
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "shared__script_form_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.008186995796205576,
+      "boot_mean": 0.008202947558214265,
+      "ci95": [
+        0.007312685437500477,
+        0.009077477268874645
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "shared__script_form_rt_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.009107091453128505,
+      "boot_mean": 0.009122437341759602,
+      "ci95": [
+        0.00828129481524229,
+        0.010010275803506373
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "rms__punjabi_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": -0.001143274365744601,
+      "boot_mean": -0.0011405902815361819,
+      "ci95": [
+        -0.0019035692637165292,
+        -0.00035986993461847313
+      ],
+      "p_boot": 0.003,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "rms__serbian_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.012472411854398735,
+      "boot_mean": 0.012462768889963626,
+      "ci95": [
+        0.011705571040511141,
+        0.01319159499059119
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "rms__script_form_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.0018176152072370277,
+      "boot_mean": 0.001825130542119344,
+      "ci95": [
+        0.0010795907427867165,
+        0.0025736403961976457
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "rms__script_form_rt_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 12,
+      "xlm-roberta-large_layer": 24,
+      "point": 0.003130085770268909,
+      "boot_mean": 0.0031395692800482112,
+      "ci95": [
+        0.0024091512585679696,
+        0.003860359452664833
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "ratio__punjabi_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 4,
+      "xlm-roberta-large_layer": 15,
+      "point": 0.034934800755892725,
+      "boot_mean": 0.03481194762648667,
+      "ci95": [
+        0.02377775727380696,
+        0.04617647518432892
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "ratio__serbian_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 11,
+      "point": -0.26635640184033105,
+      "boot_mean": -0.26518271129838533,
+      "ci95": [
+        -0.2836988603197613,
+        -0.2470236351382134
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "ratio__script_form_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 5,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.06163709140711626,
+      "boot_mean": -0.061514151459916774,
+      "ci95": [
+        -0.07229216921137134,
+        -0.05064368024119611
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    },
+    "ratio__script_form_rt_trough_xlm-roberta-large_minus_xlm-roberta-base": {
+      "xlm-roberta-base_layer": 7,
+      "xlm-roberta-large_layer": 15,
+      "point": -0.20020413330827447,
+      "boot_mean": -0.199860777735763,
+      "ci95": [
+        -0.21055454663033094,
+        -0.18918810381712148
+      ],
+      "p_boot": 0.001,
+      "excludes_zero": true,
+      "n_draws": 2000
+    }
+  }
+}

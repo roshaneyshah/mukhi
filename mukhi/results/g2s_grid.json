@@ -1,0 +1,148 @@
+{
+  "computed": "2026-10-08",
+  "script": "tools_g2s_grid.py",
+  "split": "PuMVR dev words only (held-out split never scored here)",
+  "n_dev_words": 545,
+  "n_test_words": 233,
+  "n_configurations": 12,
+  "grid": {
+    "nn": [
+      "ن",
+      "ں"
+    ],
+    "mark_gemination": [
+      "False",
+      "True"
+    ],
+    "e_medial": [
+      "ی",
+      "ے",
+      "ئ"
+    ]
+  },
+  "shipped_config": {
+    "nn": "ن",
+    "mark_gemination": false,
+    "e_medial": "ی"
+  },
+  "shipped_rank": 0,
+  "shipped_is_dev_winner": true,
+  "best": {
+    "config": {
+      "nn": "ن",
+      "mark_gemination": false,
+      "e_medial": "ی"
+    },
+    "dev_cer": 0.05149501661129568
+  },
+  "worst": {
+    "config": {
+      "nn": "ں",
+      "mark_gemination": true,
+      "e_medial": "ئ"
+    },
+    "dev_cer": 0.08762458471760798
+  },
+  "dev_cer_range": [
+    0.05149501661129568,
+    0.08762458471760798
+  ],
+  "all": [
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": false,
+        "e_medial": "ی"
+      },
+      "dev_cer": 0.05149501661129568
+    },
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": true,
+        "e_medial": "ی"
+      },
+      "dev_cer": 0.05149501661129568
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": false,
+        "e_medial": "ی"
+      },
+      "dev_cer": 0.06686046511627906
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": true,
+        "e_medial": "ی"
+      },
+      "dev_cer": 0.06686046511627906
+    },
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": false,
+        "e_medial": "ے"
+      },
+      "dev_cer": 0.07225913621262459
+    },
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": false,
+        "e_medial": "ئ"
+      },
+      "dev_cer": 0.07225913621262459
+    },
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": true,
+        "e_medial": "ے"
+      },
+      "dev_cer": 0.07225913621262459
+    },
+    {
+      "config": {
+        "nn": "ن",
+        "mark_gemination": true,
+        "e_medial": "ئ"
+      },
+      "dev_cer": 0.07225913621262459
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": false,
+        "e_medial": "ے"
+      },
+      "dev_cer": 0.08762458471760798
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": false,
+        "e_medial": "ئ"
+      },
+      "dev_cer": 0.08762458471760798
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": true,
+        "e_medial": "ے"
+      },
+      "dev_cer": 0.08762458471760798
+    },
+    {
+      "config": {
+        "nn": "ں",
+        "mark_gemination": true,
+        "e_medial": "ئ"
+      },
+      "dev_cer": 0.08762458471760798
+    }
+  ]
+}

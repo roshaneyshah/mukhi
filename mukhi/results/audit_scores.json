@@ -1,0 +1,25 @@
+{
+  "n_rows": 300,
+  "strata": {
+    "flagged": {
+      "n_judged": 1,
+      "n_errors": 1,
+      "error_rate": 1.0,
+      "ci95": [
+        0.20654329147389294,
+        1.0
+      ]
+    },
+    "unflagged": {
+      "n_judged": 299,
+      "n_errors": 22,
+      "error_rate": 0.07357859531772576,
+      "ci95": [
+        0.04908895910557607,
+        0.10888669549405625
+      ]
+    }
+  },
+  "error_types": {},
+  "corpus_error_estimate": 0.0740397309099021
+}
